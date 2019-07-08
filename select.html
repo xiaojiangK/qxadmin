@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="740092856@qq.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="images/css/admin.min.css" />
+    <link rel="shortcut icon" href="https://images.lfwin.com/lfwin/images/OEM/fordar/v2_flogo.png" type="image/x-icon">
+    <title>admin-select</title>
+</head>
+<body>
+    <div class="page-container page-select">
+        <div class="admim-title">
+            <h2>Select 选择器</h2>
+            <p>当选项过多时，使用下拉菜单展示并选择内容。</p>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>基础用法</h3>
+                <p>适用广泛的基础单选</p>
+            </div>
+            <div class="content">
+                <qx-select placeholder="请选择">
+                    <qx-option value="黄金糕"></qx-option>
+                    <qx-option value="双皮奶"></qx-option>
+                    <qx-option value="蚵仔煎"></qx-option>
+                    <qx-option value="龙须面"></qx-option>
+                    <qx-option value="北京烤鸭"></qx-option>
+                    <qx-option value="黄金糕"></qx-option>
+                    <qx-option value="双皮奶"></qx-option>
+                    <qx-option value="蚵仔煎"></qx-option>
+                    <qx-option value="龙须面"></qx-option>
+                    <qx-option value="北京烤鸭"></qx-option>
+                </qx-select>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>带默认值</h3>
+                <p>Select 下拉框默认选中状态。</p>
+            </div>
+            <div class="content">
+                <qx-select placeholder="请选择">
+                    <qx-option value="黄金糕"></qx-option>
+                    <qx-option value="双皮奶" checked></qx-option>
+                    <qx-option value="蚵仔煎"></qx-option>
+                    <qx-option value="龙须面"></qx-option>
+                    <qx-option value="北京烤鸭"></qx-option>
+                    <qx-option value="黄金糕"></qx-option>
+                    <qx-option value="双皮奶"></qx-option>
+                    <qx-option value="蚵仔煎"></qx-option>
+                    <qx-option value="龙须面"></qx-option>
+                    <qx-option value="北京烤鸭"></qx-option>
+                </qx-select>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>禁用状态</h3>
+                <p>Select 下拉框不可用状态。</p>
+            </div>
+            <div class="content">
+                <qx-select placeholder="请选择" disabled>
+                    <qx-option value="黄金糕"></qx-option>
+                    <qx-option value="双皮奶"></qx-option>
+                    <qx-option value="蚵仔煎"></qx-option>
+                    <qx-option value="龙须面"></qx-option>
+                    <qx-option value="北京烤鸭"></qx-option>
+                    <qx-option value="黄金糕"></qx-option>
+                    <qx-option value="双皮奶"></qx-option>
+                    <qx-option value="蚵仔煎"></qx-option>
+                    <qx-option value="龙须面"></qx-option>
+                    <qx-option value="北京烤鸭"></qx-option>
+                </qx-select>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>可搜索</h3>
+                <p>可以利用搜索功能快速查找选项</p>
+            </div>
+            <div class="content">
+                <qx-select placeholder="请选择" filterable>
+                    <qx-option value="黄金糕"></qx-option>
+                    <qx-option value="双皮奶"></qx-option>
+                    <qx-option value="蚵仔煎"></qx-option>
+                    <qx-option value="龙须面"></qx-option>
+                    <qx-option value="北京烤鸭"></qx-option>
+                    <qx-option value="广州烤鸭"></qx-option>
+                    <qx-option value="黄金糕"></qx-option>
+                    <qx-option value="双皮奶"></qx-option>
+                    <qx-option value="蚵仔煎"></qx-option>
+                    <qx-option value="龙须面"></qx-option>
+                    <qx-option value="北京烤鸭"></qx-option>
+                </qx-select>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>基础多选</h3>
+                <p>适用性较广的基础多选，用 Tag 展示已选项</p>
+            </div>
+            <div class="content">
+                <qx-select placeholder="请选择" multiple>
+                    <qx-option value="黄金糕"></qx-option>
+                    <qx-option value="双皮奶"></qx-option>
+                    <qx-option value="蚵仔煎"></qx-option>
+                    <qx-option value="龙须面"></qx-option>
+                    <qx-option value="北京烤鸭"></qx-option>
+                    <qx-option value="黄金糕"></qx-option>
+                    <qx-option value="双皮奶"></qx-option>
+                    <qx-option value="蚵仔煎"></qx-option>
+                    <qx-option value="龙须面"></qx-option>
+                    <qx-option value="北京烤鸭"></qx-option>
+                </qx-select>
+            </div>
+        </div>
+    </div>
+
+    <div class="attributes">
+        <h2>Select Attributes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>参数</th>
+                    <th>说明</th>
+                    <th>类型</th>
+                    <th>可选值</th>
+                    <th>默认值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>checked</td>
+                    <td>当前是否勾选</td>
+                    <td>boolean</td>
+                    <td>—</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>filterable</td>
+                    <td>是否可搜索</td>
+                    <td>boolean</td>
+                    <td>—</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>multiple</td>
+                    <td>是否多选</td>
+                    <td>boolean</td>
+                    <td>—</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>disabled</td>
+                    <td>是否禁用</td>
+                    <td>boolean</td>
+                    <td>—</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>size</td>
+                    <td>输入框尺寸</td>
+                    <td>string</td>
+                    <td>medium / small / mini</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>select input 的 name 属性</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Select Events</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>事件名称</th>
+                    <th>说明</th>
+                    <th>回调参数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>change</td>
+                    <td>绑定值变化时触发的事件</td>
+                    <td>选中的 Checkbox value 值</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <!--[if lte IE 8]>
+        <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.0/jquery.min.js"></script>
+    <![endif]-->
+    <script src="images/js/admin.min.js"></script>
+    <script>
+        $(function (){
+            $('.page-container').select({
+                change: function(val) {
+                    console.log(val);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
