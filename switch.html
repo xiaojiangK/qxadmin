@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="740092856@qq.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="images/css/admin.min.css" />
+    <link rel="shortcut icon" href="https://images.lfwin.com/lfwin/images/OEM/fordar/v2_flogo.png" type="image/x-icon">
+    <title>admin-switch</title>
+</head>
+<body>
+    <div class="page-container">
+        <div class="admim-title">
+            <h2>Switch 开关</h2>
+            <p>表示两种相互对立的状态间的切换，多用于触发「开/关」。</p>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>基础用法</h3>
+            </div>
+            <div class="content">
+                <qx-switch name="switch"></qx-switch>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>带默认值</h3>
+            </div>
+            <div class="content">
+                <qx-switch active-value="1" inactive-value="0" checked></qx-switch>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>禁用状态</h3>
+            </div>
+            <div class="content">
+                <qx-switch checked disabled></qx-switch>
+                <qx-switch disabled></qx-switch>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>文字描述</h3>
+            </div>
+            <div class="content">
+                <qx-switch checked active-text="成功" inactive-text="失败"></qx-switch>
+                <qx-switch active-text="成功" inactive-text="失败"></qx-switch>
+            </div>
+        </div>
+    </div>
+    
+    <div class="attributes">
+        <h2>Switch Attributes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>参数</th>
+                    <th>说明</th>
+                    <th>类型</th>
+                    <th>可选值</th>
+                    <th>默认值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>checked</td>
+                    <td>当前是否勾选</td>
+                    <td>boolean</td>
+                    <td>—</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>disabled</td>
+                    <td>是否禁用</td>
+                    <td>boolean</td>
+                    <td>—</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>active-text</td>
+                    <td>switch 打开时的文字描述</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>inactive-text</td>
+                    <td>switch 关闭时的文字描述</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>active-value</td>
+                    <td>switch 打开时的值</td>
+                    <td>boolean / string / number</td>
+                    <td>—</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>inactive-value</td>
+                    <td>switch 关闭时的值</td>
+                    <td>boolean / string / number</td>
+                    <td>—</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>switch 对应的 name 属性</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Switch Events</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>事件名称</th>
+                    <th>说明</th>
+                    <th>回调参数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>change</td>
+                    <td>switch 状态发生变化时的回调函数</td>
+                    <td>新状态的值</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="images/js/admin.min.js"></script>
+    <script>
+        $(function (){
+            $('.page-container').switch({
+                change: function(val) {
+                    console.log(val);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
