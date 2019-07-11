@@ -65,11 +65,12 @@ a {
 .page-container h3{
     font-size: 22px;
     font-weight: 400;
-    margin: 55px 0 10px;
+    margin: 55px 0 0;
 }
 .page-container p{
     font-size: 14px;
     color: #5e6d82;
+    margin: 10px 0;
     line-height: 1.5em;
 }
 qx-checkbox,qx-radio,qx-select,qx-switch,qx-button{
@@ -964,4 +965,94 @@ textarea:focus{
 .qx-input_box.mini input{
     height: 28px;
     line-height: 28px;
+}
+.pagination {
+    color: #999;
+    font-size: 15px;
+    text-align: center;
+    padding: 20px 20px 40px 0
+}
+.pagination a {
+    text-decoration: none
+}
+.pagination span,.pagination a {
+    display: inline-block;
+    box-sizing: border-box
+}
+.pagination .current {
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 3px;
+    background: #FF7905
+}
+.pagination .zxfPagenum {
+    color: #666;
+    width: 35px;
+    height: 35px;
+    margin: 0 5px;
+    line-height: 35px;
+    border-radius: 3px
+}
+.pagination .zxfPagenum:first-child{
+    margin: 0 5px 0 0;
+}
+.pagination .nextpage {
+    margin: 0 5px
+}
+.pagination .nextbtn,.pagination .prebtn,.pagination span.disabled {
+    color: #666;
+    background: #fff;
+    width: 70px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 3px
+}
+.pagination .nextbtn{
+    margin: 0 5px 0 0;
+}
+.pagination .zxfinput {
+    width: 48px;
+    height: 32px;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #e6e6e6;
+    margin: 0 12px;
+    border-radius: 3px;
+    color: #999
+}
+.pagination input::-webkit-outer-spin-button,.pagination input::-webkit-inner-spin-button {
+    -webkit-appearance: none
+}
+.pagination input[type=number] {
+    outline: none;
+    -moz-appearance: textfield;
+}
+.pagination input:hover{
+    border-color: #FF7905;
+}
+.pagination .dot{
+    margin: 0 5px 0 0;
+}
+.pagination.small{
+    font-size: 12px;
+}
+.pagination.small .zxfPagenum, .pagination.small .current{
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+}
+.pagination.small input{
+    width: 38px;
+    height: 25px;
+    line-height: 25px;
+}
+.pagination.small .nextbtn, .pagination.small .prebtn, .pagination.small span.disabled{
+    width: 60px;
+    height: 25px;
+    line-height: 25px;
+}
+.pagination.gray .zxfPagenum, .pagination.gray .nextbtn, .pagination.gray .prebtn, .pagination.gray span.disabled{
+    background: #f4f4f5;
 }

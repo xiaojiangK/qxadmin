@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="740092856@qq.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="images/css/admin.min.css" />
+    <link rel="shortcut icon" href="https://images.lfwin.com/lfwin/images/OEM/fordar/v2_flogo.png" type="image/x-icon">
+    <title>admin-DateTimePicker</title>
+</head>
+<body>
+    <div class="page-container">
+        <div class="admim-title">
+            <h2>DateTimePicker 日期时间选择器</h2>
+            <p>在同一个选择器里选择日期和时间</p>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>日期和时间点</h3>
+            </div>
+            <div class="content">
+                <span class="datetime-picker">
+                    <p>年月日时分秒单个选择，最小值：2020-01-01 04:00:00 (YYYY-MM-DD HH:mm:ss 单个)</p>
+                    <qx-datetime name="name" value="2020-01-01 04:00:00" placeholder="请选择时间"></qx-datetime>
+                </span>
+                <span class="datetime-picker2">
+                    <p>年月日时分单个选择 (YYYY-MM-DD HH:mm 单个)</p>
+                    <qx-datetime></qx-datetime>
+                </span>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>日期和时间范围</h3>
+            </div>
+            <div class="content">
+                <span class="datetime-range">
+                    <p>年月日时分秒范围选择，最小值：2018-01-01 06:00:00，最大值：2020-01-01 06:00:00，带快捷选择 (YYYY-MM-DD HH:mm:ss 范围)</p>
+                    <qx-datetime-range name="name1,name2" value="2018-01-01 06:00:00,2020-08-01 06:00:00" placeholder="开始时间,结束时间"></qx-datetime-range>
+                </span>
+                <span class="datetime-range2">
+                    <p>年月日时分秒范围选择，开始结束限制在一个自然月内，带快捷选择 (YYYY-MM-DD HH:mm:ss 范围)</p>
+                    <qx-datetime-range></qx-datetime-range>
+                </span>
+                <span class="datetime-range3">
+                    <p>年月日时分秒范围选择，开始结束限制在30天内，不带快捷选择 (YYYY-MM-DD HH:mm:ss 范围)</p>
+                    <qx-datetime-range></qx-datetime-range>
+                </span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="attributes">
+        <h2>DateTimePicker Attributes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>参数</th>
+                    <th>说明</th>
+                    <th>类型</th>
+                    <th>可选值</th>
+                    <th>默认值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>value</td>
+                    <td>input value值, range范围可用,分开</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>原生 name 属性, range范围可用,分开</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>placeholder</td>
+                    <td>占位内容, range范围可用,分开</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>format</td>
+                    <td>datepicker 类型（JS对象传递）</td>
+                    <td>string</td>
+                    <td>YYYY-MM-DD / HH:mm:ss</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>isRange</td>
+                    <td>是否范围选择（JS对象传递）</td>
+                    <td>Boolean</td>
+                    <td>false</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>min</td>
+                    <td>时间最小值（JS对象传递）</td>
+                    <td>false/String</td>
+                    <td>false</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>max</td>
+                    <td>时间最大值（JS对象传递）</td>
+                    <td>false/String</td>
+                    <td>false</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>hasShortcut</td>
+                    <td>是否开启快捷选项（JS对象传递）</td>
+                    <td>Boolean</td>
+                    <td>false</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>shortcutOptions</td>
+                    <td>快捷选项配置参数（JS对象传递）</td>
+                    <td>Array</td>
+                    <td>[]</td>
+                    <td>[]</td>
+                </tr>
+                <tr>
+                    <td>between</td>
+                    <td>开始和结束值之间的时间间隔天数（只对范围有效；JS对象传递）</td>
+                    <td>false/Number</td>
+                    <td>false</td>
+                    <td>false</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>DateTimePicker Events</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>事件名称</th>
+                    <th>说明</th>
+                    <th>回调参数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>hide</td>
+                    <td>隐藏时触发的事件</td>
+                    <td>type（choose，confirm，shortcut，clickBody）, value值</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="images/js/admin.min.js"></script>
+    <script>
+        $(function (){
+            var DATAPICKERAPI = {
+              shortcutMonth: function () {
+                // 当月
+                var nowDay = moment().get('date');
+                var prevMonthFirstDay = moment().subtract(1, 'months').set({ 'date': 1 });
+                var prevMonthDay = moment().diff(prevMonthFirstDay, 'days');
+                return {
+                  now: '-' + nowDay + ',0',
+                  prev: '-' + prevMonthDay + ',-' + nowDay
+                }
+              },
+              // 近n小时计算返回
+              shortcutPrevHours: function (hour) {
+                var nowDay = moment().get('date');
+                var prevHours = moment().subtract(hour, 'hours');
+                var prevDate=prevHours.get('date')- nowDay;
+                var nowTime=moment().format('HH:mm:ss');
+                var prevTime = prevHours.format('HH:mm:ss');
+                return {
+                  day: prevDate + ',0',
+                  time: prevTime+',' + nowTime,
+                  name: '近'+ hour+'小时'
+                }
+              },
+              // 注意为函数：快捷选项option:只能同一个月份内的
+              rangeMonthShortcutOption1: function () {
+                var result = DATAPICKERAPI.shortcutMonth();
+                // 近18小时
+                var resultTime= DATAPICKERAPI.shortcutPrevHours(18);
+                return [{
+                  name: '昨天',
+                  day: '-1,-1',
+                  time: '00:00:00,23:59:59'
+                }, {
+                  name: '这一月',
+                  day: result.now,
+                  time: '00:00:00,'
+                }, {
+                  name: '上一月',
+                  day: result.prev,
+                  time: '00:00:00,23:59:59'
+                }, {
+                  name: resultTime.name,
+                  day: resultTime.day,
+                  time: resultTime.time
+                }];
+              }
+            };
+
+            $('.datetime-picker').DatePicker({
+                hasShortcut:true,
+                min:'2020-01-01 04:00:00',
+                format: 'YYYY-MM-DD HH:mm:ss',
+                shortcutOptions:[{
+                  name: '今天',
+                  day: '0'
+                }, {
+                  name: '昨天',
+                  day: '-1',
+                  time: '00:00:00'
+                }, {
+                  name: '一周前',
+                  day: '-7'
+                }],
+                hide: function(val, type){
+                  console.info(val, type)
+                }
+            });
+            $('.datetime-picker2').DatePicker({
+                format: 'YYYY-MM-DD HH:mm',
+                hide: function(val, type){
+                  console.info(val, type)
+                }
+            });
+            $('.datetime-range').DatePicker({
+                hasShortcut: true,
+                min: '2018-01-01 06:00:00',
+                max: '2020-04-29 20:59:59',
+                isRange: true,
+                shortcutOptions: [{
+                  name: '昨天',
+                  day: '-1,-1',
+                  time: '00:00:00,23:59:59'
+                },{
+                  name: '最近一周',
+                  day: '-7,0',
+                  time:'00:00:00,'
+                }, {
+                  name: '最近一个月',
+                  day: '-30,0',
+                  time: '00:00:00,'
+                }, {
+                  name: '最近三个月',
+                  day: '-90, 0',
+                  time: '00:00:00,'
+                }],
+                hide: function (val, type) {
+                  console.info(val, type)
+                }
+            });
+            $('.datetime-range2').DatePicker({
+                isRange: true,
+                between:'month',
+                hasShortcut: true,
+                shortcutOptions: DATAPICKERAPI.rangeMonthShortcutOption1(),
+                hide: function(val, type){
+                  console.info(val, type)
+                }
+            });
+            $('.datetime-range3').DatePicker({
+                isRange: true,
+                between: 30,
+                hide: function(val, type){
+                  console.info(val, type)
+                }
+            });
+        });
+    </script>
+</body>
+</html>

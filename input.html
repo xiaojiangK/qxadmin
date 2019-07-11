@@ -212,6 +212,28 @@
                 </tr>
             </tbody>
         </table>
+        <h2>Input Events</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>事件名称</th>
+                    <th>说明</th>
+                    <th>回调参数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>change</td>
+                    <td>值变化时触发的事件</td>
+                    <td>输入的 Input value 值</td>
+                </tr>
+                <tr>
+                    <td>blur</td>
+                    <td>失去焦点时触发的事件</td>
+                    <td>输入的 Input value 值</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
@@ -220,6 +242,9 @@
         $(function (){
             $('.page-container').input({
                 change: function (val) {
+                    console.log(val);
+                },
+                blur: function (val) {
                     console.log(val);
                 }
             });
