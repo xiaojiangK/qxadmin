@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="740092856@qq.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="images/css/admin.min.css" />
+    <link rel="shortcut icon" href="https://images.lfwin.com/lfwin/images/OEM/fordar/v2_flogo.png" type="image/x-icon">
+    <title>admin-Message</title>
+</head>
+<body>
+    <div class="page-container">
+        <div class="admim-title">
+            <h2>Message 消息提示</h2>
+            <p>常用于主动操作后的反馈提示。与 Notification 的区别是后者更多用于系统级通知的被动提醒。</p>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>基础用法</h3>
+                <p>从顶部出现，3 秒后自动消失。</p>
+            </div>
+            <div class="content tabs">
+                <qx-button>打开消息提示</qx-button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="attributes">
+        <h2>Message Attributes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>参数</th>
+                    <th>说明</th>
+                    <th>类型</th>
+                    <th>可选值</th>
+                    <th>默认值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>message</td>
+                    <td>消息文字</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>主题</td>
+                    <td>string</td>
+                    <td>success/warning/info/error</td>
+                    <td>info</td>
+                </tr>
+                <tr>
+                    <td>iconClass</td>
+                    <td>自定义图标的类名，会覆盖 type</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>duration</td>
+                    <td>显示时间, 毫秒。设为 0 则不会自动关闭</td>
+                    <td>number</td>
+                    <td>—</td>
+                    <td>3000</td>
+                </tr>
+                <tr>
+                    <td>showClose</td>
+                    <td>是否显示关闭按钮</td>
+                    <td>boolean</td>
+                    <td>—</td>
+                    <td>false</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Message Events</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>事件名称</th>
+                    <th>说明</th>
+                    <th>回调参数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>close</td>
+                    <td>关闭当前的 Message</td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="images/js/admin.min.js"></script>
+    <script type="text/javascript">
+        $('.tabs').tabs({
+            click: function (e){
+                console.log('点击：' + e);
+            },
+            remove: function (e){
+                console.log('删除：' + e);
+            }
+        });
+        $('.tabs4 .iconadd').on('click', function (){
+            $(this).tabs({
+                addItem: {
+                    pack: '.tabs4',
+                    title: '我是新的Tab',
+                    content: '<p style="color: pink">我是新的Content</p>'
+                }
+            });
+        });
+    </script>
+</body>
+</html>

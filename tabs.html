@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="740092856@qq.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="images/css/admin.min.css" />
+    <link rel="shortcut icon" href="https://images.lfwin.com/lfwin/images/OEM/fordar/v2_flogo.png" type="image/x-icon">
+    <title>admin-Tabs</title>
+</head>
+<body>
+    <div class="page-container">
+        <div class="admim-title">
+            <h2>Tabs 标签页</h2>
+            <p>当数据量过多时，使用分页分解数据。</p>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>基础用法</h3>
+            </div>
+            <div class="content tabs">
+                <qx-tabs>
+                    <qx-tab-pane value="用户管理">用户管理的内容</qx-tab-pane>
+                    <qx-tab-pane value="配置管理">配置管理的内容</qx-tab-pane>
+                    <qx-tab-pane value="角色管理">角色管理的内容</qx-tab-pane>
+                    <qx-tab-pane value="任务补偿">任务补偿的内容</qx-tab-pane>
+                </qx-tabs>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>卡片化</h3>
+            </div>
+            <div class="content tabs">
+                <qx-tabs type="border-card">
+                    <qx-tab-pane value="用户管理">用户管理的内容</qx-tab-pane>
+                    <qx-tab-pane value="配置管理">配置管理的内容</qx-tab-pane>
+                    <qx-tab-pane value="角色管理">角色管理的内容</qx-tab-pane>
+                    <qx-tab-pane value="任务补偿">任务补偿的内容</qx-tab-pane>
+                </qx-tabs>
+            </div>
+        </div>
+        <div class="item">
+                <div class="title">
+                    <h3>按钮组</h3>
+                </div>
+                <div class="content tabs">
+                    <qx-tabs type="button">
+                        <qx-tab-pane value="用户管理">用户管理的内容</qx-tab-pane>
+                        <qx-tab-pane value="配置管理">配置管理的内容</qx-tab-pane>
+                        <qx-tab-pane value="角色管理">角色管理的内容</qx-tab-pane>
+                        <qx-tab-pane value="任务补偿">任务补偿的内容</qx-tab-pane>
+                    </qx-tabs>
+                </div>
+            </div>
+        <div class="item">
+            <div class="title">
+                <h3>动态增减标签页</h3>
+                <p>增减标签页按钮只能在选项卡样式的标签页下使用</p>
+            </div>
+            <div class="content tabs tabs4">
+                <span class="iconfont iconadd"></span> 
+                <qx-tabs closable>
+                    <qx-tab-pane value="用户管理">用户管理的内容</qx-tab-pane>
+                    <qx-tab-pane value="配置管理">配置管理的内容</qx-tab-pane>
+                    <qx-tab-pane value="角色管理">角色管理的内容</qx-tab-pane>
+                    <qx-tab-pane value="任务补偿">任务补偿的内容</qx-tab-pane>
+                </qx-tabs>
+            </div>
+        </div>
+    </div>
+    
+    <div class="attributes">
+        <h2>Tabs Attributes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>参数</th>
+                    <th>说明</th>
+                    <th>类型</th>
+                    <th>可选值</th>
+                    <th>默认值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>value</td>
+                    <td>选中选项卡的 name</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>第一个选项卡的 name</td>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>风格类型</td>
+                    <td>string</td>
+                    <td>border-card / button</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>closable</td>
+                    <td>标签是否可关闭</td>
+                    <td>boolean</td>
+                    <td>—</td>
+                    <td>false</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Tabs Events</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>事件名称</th>
+                    <th>说明</th>
+                    <th>回调参数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>click</td>
+                    <td>tab 被选中时触发</td>
+                    <td>被选中的标签 tab 实例</td>
+                </tr>
+                <tr>
+                    <td>remove</td>
+                    <td>点击 tab 移除按钮后触发</td>
+                    <td>被删除的标签的 name</td>
+                </tr>
+                <tr>
+                    <td>addItem</td>
+                    <td>添加 Tabs，可选参数（pack：容器的选择器, 默认body、title：标题、content：内容, 支持HTML）</td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="images/js/admin.min.js"></script>
+    <script type="text/javascript">
+        $('.tabs').tabs({
+            click: function (e){
+                console.log('点击：' + e);
+            },
+            remove: function (e){
+                console.log('删除：' + e);
+            }
+        });
+        $('.tabs4 .iconadd').on('click', function (){
+            $(this).tabs({
+                addItem: {
+                    pack: '.tabs4',
+                    title: '我是新的Tab',
+                    content: '<p style="color: pink">我是新的Content</p>'
+                }
+            });
+        });
+    </script>
+</body>
+</html>
