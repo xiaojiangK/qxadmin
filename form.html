@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="740092856@qq.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="images/css/admin.min.css" />
+    <link rel="shortcut icon" href="https://images.lfwin.com/lfwin/images/OEM/fordar/v2_flogo.png" type="image/x-icon">
+    <title>admin-form</title>
+</head>
+<body>
+    <div class="page-container">
+        <div class="admim-title">
+            <h2>Form 表单</h2>
+            <p>由输入框、选择器、单选框、多选框等控件组成，用以收集、校验、提交数据</p>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>典型表单</h3>
+                <p>包括各种表单项，比如输入框、选择器、开关、单选框、多选框等。</p>
+            </div>
+            <div class="content">
+                <qx-form label-width="70px">
+                    <qx-form-item label="活动名称" required>
+                        <qx-input></qx-input>
+                        <qx-input clearable></qx-input>
+                        <qx-input type="password" show-pass></qx-input>
+                        <qx-input placeholder="请输入内容" show-word maxlength="10" minlength="2"></qx-input>
+                        <qx-input placeholder="请输入内容" type="textarea" show-word maxlength="100" minlength="10"></qx-input>
+                    </qx-form-item>
+                    <qx-form-item label="活动区域" required>
+                        <qx-select placeholder="请选择" name="sex">
+                            <qx-option value="黄金糕"></qx-option>
+                            <qx-option value="双皮奶"></qx-option>
+                            <qx-option value="蚵仔煎"></qx-option>
+                            <qx-option value="龙须面"></qx-option>
+                            <qx-option value="北京烤鸭"></qx-option>
+                            <qx-option value="黄金糕"></qx-option>
+                            <qx-option value="双皮奶"></qx-option>
+                            <qx-option value="蚵仔煎"></qx-option>
+                            <qx-option value="龙须面"></qx-option>
+                            <qx-option value="北京烤鸭"></qx-option>
+                        </qx-select>
+                    </qx-form-item>
+                    <qx-form-item label="活动时间" required>
+                        <qx-date></qx-date>
+                        <qx-time></qx-time>
+                    </qx-form-item>
+                    <qx-form-item label="活动时间" required>
+                        <qx-radio></qx-radio>
+                        <qx-radio></qx-radio>
+                    </qx-form-item>
+                    <qx-form-item label="活动时间" required>
+                        <qx-radio></qx-radio>
+                        <qx-radio></qx-radio>
+                    </qx-form-item>
+                    <qx-form-item label="活动时间" required>
+                        <qx-checkbox></qx-checkbox>
+                        <qx-checkbox></qx-checkbox>
+                        <qx-checkbox></qx-checkbox>
+                    </qx-form-item>
+                    <qx-form-item label="活动时间" required>
+                        <qx-checkbox></qx-checkbox>
+                        <qx-checkbox></qx-checkbox>
+                        <qx-checkbox></qx-checkbox>
+                    </qx-form-item>
+                    <qx-form-item label="活动时间" required>
+                        <qx-switch></qx-switch>
+                    </qx-form-item>
+                    <qx-form-item>
+                        <qx-button>提交</qx-button>
+                    </qx-form-item>
+                </qx-form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="attributes">
+            <h2>Form Attributes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>参数</th>
+                        <th>说明</th>
+                        <th>类型</th>
+                        <th>可选值</th>
+                        <th>默认值</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>label-width</td>
+                        <td>表单域标签的的宽度，例如 '50px'。支持 auto。</td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>method</td>
+                        <td>规定用于发送表单数据的 HTTP 方法。</td>
+                        <td>string</td>
+                        <td>get / post</td>
+                        <td>get</td>
+                    </tr>
+                    <tr>
+                        <td>action</td>
+                        <td>规定当提交表单时向何处发送表单数据。</td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>accept-charset</td>
+                        <td>规定服务器可处理的表单数据字符集。</td>
+                        <td>string</td>
+                        <td>character_set</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>enctype</td>
+                        <td>规定在向服务器发送表单数据之前如何对其进行编码。（适用于 method="post" 的情况）</td>
+                        <td>string</td>
+                        <td>application/x-www-form-urlencoded / multipart/form-data / text/plain</td>
+                        <td>application/x-www-form-urlencoded</td>
+                    </tr>
+                    <tr>
+                        <td>target</td>
+                        <td>规定在何处打开 action URL。</td>
+                        <td>string</td>
+                        <td>_blank / _self / _parent / _top</td>
+                        <td>_self</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Form-Item Attributes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>参数</th>
+                        <th>说明</th>
+                        <th>类型</th>
+                        <th>可选值</th>
+                        <th>默认值</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>label</td>
+                        <td>标签文本</td>
+                        <td>string</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>required</td>
+                        <td>是否必填，如不设置，则会根据校验规则自动生成</td>
+                        <td>boolean</td>
+                        <td>—</td>
+                        <td>false</td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="images/js/admin.min.js"></script>
+</body>
+</html>

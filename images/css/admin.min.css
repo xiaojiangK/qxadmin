@@ -14,12 +14,12 @@
     -o-box-sizing: border-box;
     box-sizing: border-box;
 }
+body,html{
+    background:#fff;
+}
 body,html,h1,h2,h3,h4,p{
     margin: 0;
     padding: 0;
-    height: 100%;
-    font-weight: 400;
-    background:#fff;
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
     font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
@@ -1095,7 +1095,7 @@ textarea:focus{
     position: relative;
     border-bottom: 1px solid transparent;
     border-left: 1px solid #e4e7ed;
-    transition: color .3s cubic-bezier(.645,.045,.355,1),padding .3s cubic-bezier(.645,.045,.355,1);
+    transition: .3s cubic-bezier(.645,.045,.355,1),padding .3s cubic-bezier(.645,.045,.355,1);
 }
 .qx-tabs .qx-tabs_item:hover{
     color: #FF7905;
@@ -1202,4 +1202,98 @@ textarea:focus{
 }
 .qx-tabs.closable .qx-tabs_con{
     padding: 0 20px 20px;
+}
+@keyframes message {
+	0% {
+        top: -60px
+	}
+	to {
+        top: 20px
+	}
+}
+.qx-message {
+	left: 50%;
+    top: 20px;
+	display: flex;
+    z-index: 999;
+	min-width: 380px;
+	border-radius: 4px;
+	position: fixed;
+	overflow: hidden;
+	align-items: center;
+	box-sizing: border-box;
+    -webkit-animation: .5s message;
+    animation: .5s message;
+	background-color: #edf2fc;
+	border: 1px solid #ebeef5;
+	transition: transform .4s, opacity .4s;
+	padding: 15px 15px 15px 20px
+}
+.qx-message.is-closable .qx-message_con {
+	padding-right: 16px
+}
+.qx-message p {
+	margin: 0
+}
+.qx-message-info .qx-message_con {
+	color: #909399
+}
+.qx-message-success {
+	background-color: #f0f9eb;
+	border-color: #e1f3d8
+}
+.qx-message-success .qx-message_con {
+	color: #67c23a
+}
+.qx-message-warning {
+	background-color: #fdf6ec;
+	border-color: #faecd8
+}
+.qx-message-warning .qx-message_con {
+	color: #e6a23c
+}
+.qx-message-error {
+	background-color: #fef0f0;
+	border-color: #fde2e2
+}
+.qx-message-error .qx-message_con {
+	color: #f56c6c
+}
+.qx-message .iconfont {
+	margin-right: 10px
+}
+.qx-message_con {
+	padding: 0;
+	font-size: 14px;
+	line-height: 1
+}
+.qx-message_con:focus {
+	outline-width: 0
+}
+.qx-message .iconclose {
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	transform: translateY(-50%);
+	cursor: pointer;
+	color: #c0c4cc;
+	font-size: 16px
+}
+.qx-message .iconclose:focus {
+	outline-width: 0
+}
+.qx-message .iconclose:hover {
+	color: #909399
+}
+.qx-message .iconmsg-success {
+	color: #67c23a
+}
+.qx-message .iconmsg-error {
+	color: #f56c6c
+}
+.qx-message .iconmsg-info {
+	color: #909399
+}
+.qx-message .iconmsg-warning {
+	color: #e6a23c
 }

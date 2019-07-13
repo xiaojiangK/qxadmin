@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="images/css/admin.min.css" />
     <link rel="shortcut icon" href="https://images.lfwin.com/lfwin/images/OEM/fordar/v2_flogo.png" type="image/x-icon">
-    <title>admin-Tabs</title>
+    <title>admin-tabs</title>
 </head>
 <body>
     <div class="page-container">
@@ -42,18 +42,18 @@
             </div>
         </div>
         <div class="item">
-                <div class="title">
-                    <h3>按钮组</h3>
-                </div>
-                <div class="content tabs">
-                    <qx-tabs type="button">
-                        <qx-tab-pane value="用户管理">用户管理的内容</qx-tab-pane>
-                        <qx-tab-pane value="配置管理">配置管理的内容</qx-tab-pane>
-                        <qx-tab-pane value="角色管理">角色管理的内容</qx-tab-pane>
-                        <qx-tab-pane value="任务补偿">任务补偿的内容</qx-tab-pane>
-                    </qx-tabs>
-                </div>
+            <div class="title">
+                <h3>按钮组</h3>
             </div>
+            <div class="content tabs">
+                <qx-tabs type="button">
+                    <qx-tab-pane value="用户管理">用户管理的内容</qx-tab-pane>
+                    <qx-tab-pane value="配置管理">配置管理的内容</qx-tab-pane>
+                    <qx-tab-pane value="角色管理">角色管理的内容</qx-tab-pane>
+                    <qx-tab-pane value="任务补偿">任务补偿的内容</qx-tab-pane>
+                </qx-tabs>
+            </div>
+        </div>
         <div class="item">
             <div class="title">
                 <h3>动态增减标签页</h3>
@@ -152,7 +152,13 @@
                 addItem: {
                     pack: '.tabs4',
                     title: '我是新的Tab',
-                    content: '<p style="color: pink">我是新的Content</p>'
+                    content: '<p style="color: #666">我是新的Content</p>'
+                },
+                click: function (e){
+                    console.log('点击：' + e);
+                },
+                remove: function (e){
+                    console.log('删除：' + e);
                 }
             });
         });
