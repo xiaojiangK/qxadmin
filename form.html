@@ -72,26 +72,28 @@
                 <h3>表单验证</h3>
                 <p>在防止用户犯错的前提下，尽可能让用户更早地发现并纠正错误。</p>
             </div>
-            <div class="content">
+            <div class="content checkForm">
                 <qx-form label-width="90px">
-                    <qx-form-item label="输入框" required>
+                    <qx-form-item label="输入框" prop="input">
                         <qx-input name="text"></qx-input>
                     </qx-form-item>
-                    <qx-form-item label="密码框" required>
+                    <qx-form-item label="密码框" prop="password">
                         <qx-input type="password" name="password" show-pass></qx-input>
                     </qx-form-item>
-                    <qx-form-item label="文本域" required>
+                    <qx-form-item label="文本域" prop="textarea">
                         <qx-input type="textarea" name="textarea"></qx-input>
                     </qx-form-item>
-                    <qx-form-item label="活动时间" required>
+                    <qx-form-item label="活动时间" prop="datetime">
                         <span class="date2">
                             <qx-date name="date"></qx-date>
                         </span>
+                    </qx-form-item>
+                    <qx-form-item label="集合时间" prop="datetime2">
                         <span class="time2">
                             <qx-time name="time"></qx-time>
                         </span>
                     </qx-form-item>
-                    <qx-form-item label="下拉框" required>
+                    <qx-form-item label="下拉框" prop="select">
                         <qx-select placeholder="请选择" name="select">
                             <qx-option value="黄金糕"></qx-option>
                             <qx-option value="双皮奶"></qx-option>
@@ -100,20 +102,22 @@
                             <qx-option value="北京烤鸭"></qx-option>
                         </qx-select>
                     </qx-form-item>
-                    <qx-form-item label="复选框" required>
+                    <qx-form-item label="复选框" prop="checkbox">
                         <qx-checkbox value="xiezuo" name="checkbox">写作</qx-checkbox>
                         <qx-checkbox value="yuedu" name="checkbox">阅读</qx-checkbox>
                         <qx-checkbox value="fadai" name="checkbox">发呆</qx-checkbox>
                     </qx-form-item>
-                    <qx-form-item label="单选框" required>
+                    <qx-form-item label="单选框" prop="radio">
                         <qx-radio value="nan" name="radio">男</qx-radio>
                         <qx-radio value="nv" name="radio">女</qx-radio>
                     </qx-form-item>
-                    <qx-form-item label="开关" required>
+                    <qx-form-item label="开关">
                         <qx-switch name="switch"></qx-switch>
                     </qx-form-item>
                     <qx-form-item>
-                        <qx-button type="primary">提交</qx-button>
+                        <span class="submit">
+                            <qx-button type="primary">提交</qx-button>
+                        </span>
                         <qx-button native="reset">重置</qx-button>
                     </qx-form-item>
                 </qx-form>
@@ -122,90 +126,108 @@
     </div>
     
     <div class="attributes">
-            <h2>Form Attributes</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>参数</th>
-                        <th>说明</th>
-                        <th>类型</th>
-                        <th>可选值</th>
-                        <th>默认值</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>label-width</td>
-                        <td>表单域标签的的宽度，例如 '50px'。支持 auto。</td>
-                        <td>string</td>
-                        <td>—</td>
-                        <td>—</td>
-                    </tr>
-                    <tr>
-                        <td>method</td>
-                        <td>规定用于发送表单数据的 HTTP 方法。</td>
-                        <td>string</td>
-                        <td>get / post</td>
-                        <td>get</td>
-                    </tr>
-                    <tr>
-                        <td>action</td>
-                        <td>规定当提交表单时向何处发送表单数据。</td>
-                        <td>string</td>
-                        <td>—</td>
-                        <td>—</td>
-                    </tr>
-                    <tr>
-                        <td>accept-charset</td>
-                        <td>规定服务器可处理的表单数据字符集。</td>
-                        <td>string</td>
-                        <td>character_set</td>
-                        <td>—</td>
-                    </tr>
-                    <tr>
-                        <td>enctype</td>
-                        <td>规定在向服务器发送表单数据之前如何对其进行编码。（适用于 method="post" 的情况）</td>
-                        <td>string</td>
-                        <td>application/x-www-form-urlencoded / multipart/form-data / text/plain</td>
-                        <td>application/x-www-form-urlencoded</td>
-                    </tr>
-                    <tr>
-                        <td>target</td>
-                        <td>规定在何处打开 action URL。</td>
-                        <td>string</td>
-                        <td>_blank / _self / _parent / _top</td>
-                        <td>_self</td>
-                    </tr>
-                </tbody>
-            </table>
-            <h2>Form-Item Attributes</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>参数</th>
-                        <th>说明</th>
-                        <th>类型</th>
-                        <th>可选值</th>
-                        <th>默认值</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>label</td>
-                        <td>标签文本</td>
-                        <td>string</td>
-                        <td>—</td>
-                        <td>—</td>
-                    </tr>
-                    <tr>
-                        <td>required</td>
-                        <td>是否必填，如不设置，则会根据校验规则自动生成</td>
-                        <td>boolean</td>
-                        <td>—</td>
-                        <td>false</td>
-                    </tr>
-                </tbody>
-            </table>
+        <h2>Form Attributes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>参数</th>
+                    <th>说明</th>
+                    <th>类型</th>
+                    <th>可选值</th>
+                    <th>默认值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>label-width</td>
+                    <td>表单域标签的的宽度，例如 '50px'。支持 auto。</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>method</td>
+                    <td>规定用于发送表单数据的 HTTP 方法。</td>
+                    <td>string</td>
+                    <td>get / post</td>
+                    <td>get</td>
+                </tr>
+                <tr>
+                    <td>action</td>
+                    <td>规定当提交表单时向何处发送表单数据。</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>accept-charset</td>
+                    <td>规定服务器可处理的表单数据字符集。</td>
+                    <td>string</td>
+                    <td>character_set</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>enctype</td>
+                    <td>规定在向服务器发送表单数据之前如何对其进行编码。（适用于 method="post" 的情况）</td>
+                    <td>string</td>
+                    <td>application/x-www-form-urlencoded / multipart/form-data / text/plain</td>
+                    <td>application/x-www-form-urlencoded</td>
+                </tr>
+                <tr>
+                    <td>target</td>
+                    <td>规定在何处打开 action URL。</td>
+                    <td>string</td>
+                    <td>_blank / _self / _parent / _top</td>
+                    <td>_self</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Form-Item Attributes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>参数</th>
+                    <th>说明</th>
+                    <th>类型</th>
+                    <th>可选值</th>
+                    <th>默认值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>label</td>
+                    <td>标签文本</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Form Event</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>参数</th>
+                    <th>说明</th>
+                    <th>类型</th>
+                    <th>可选值</th>
+                    <th>默认值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>事件名称</td>
+                    <td>说明</td>
+                    <td>回调参数</td>
+                </tr>
+                <tr>
+                    <td>checkForm</td>
+                    <td>任一表单项被校验后触发</td>
+                    <td>被校验的表单项 prop 值，校验是否通过，错误消息（如果存在）</td>
+                </tr>
+            </tbody>
+        </table>
+        
     </div>
 
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
@@ -214,30 +236,64 @@
         $('.time').DatePicker({
             format: 'HH:mm:ss',
             min: '06:00:00',
-            max: '20:00:00',
-            hide: function (val, type){
-                console.log(val, type);
-            }
+            max: '20:00:00'
         });
         $('.date').DatePicker({
-            format:'YYYY-MM-DD',
-            hide: function (val, type){
-                console.log(val, type);
-            }
+            format:'YYYY-MM-DD'
         });
+
         $('.time2').DatePicker({
             format: 'HH:mm:ss',
             min: '06:00:00',
-            max: '20:00:00',
-            hide: function (val, type){
-                console.log(val, type);
-            }
+            max: '20:00:00'
         });
         $('.date2').DatePicker({
-            format:'YYYY-MM-DD',
-            hide: function (val, type){
-                console.log(val, type);
+            format:'YYYY-MM-DD'
+        });
+
+        const rule = {
+            input: {
+                min: 5,
+                max: 10,
+                required: true,
+                message: 'input必填，并且长度在5 到 10个字符'
+            },
+            password: {
+                min: 8,
+                max: 18,
+                required: true,
+                message: 'password必填，并且长度在8 到 18个字符'
+            },
+            datetime: {
+                required: true,
+                message: '时间日期必填'
+            },
+            datetime2: {
+                required: true,
+                message: '时间日期必填2'
+            },
+            textarea: {
+                required: true,
+                message: 'textarea是必填项'
+            },
+            select: {
+                required: true,
+                message: 'select是必填项'
+            },
+            checkbox: {
+                required: true,
+                message: 'checkbox 至少选择一项'
+            },
+            radio: {
+                required: true,
+                message: 'radio 至少选择一项'
             }
+        };
+
+        $('.checkForm').validate(rule);
+
+        $('.submit button').on('click', function() {
+            $('.checkForm').validate({type: 'submit', ...rule});
         });
     </script>
 </body>

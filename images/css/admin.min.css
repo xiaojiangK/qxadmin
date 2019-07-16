@@ -1333,3 +1333,7 @@ textarea:focus{
     top: 100%;
     left: 0;
 }
+.c-datepicker-date-editor.error{
+    border-color:#F04832;
+    box-shadow: 0 0 6px 0 rgba(240, 72, 50, 0.6);
+}
