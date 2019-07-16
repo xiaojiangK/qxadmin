@@ -565,7 +565,7 @@ textarea:focus{
     display: inline-block;
 }
 .qx-select{
-    width: 298px;
+    width: 280px;
     max-height: 294px;
     position: relative;
     display: inline-block;
@@ -621,6 +621,7 @@ textarea:focus{
     width: 100%;
     z-index: 1001;
     display: none;
+    z-index: 999;
     border-radius: 4px;
     position: absolute;
     -webkit-box-sizing: border-box;
@@ -903,7 +904,7 @@ textarea:focus{
     border-radius: 20px;
 }
 .qx-input_box{
-    width: 240px;
+    width: 280px;
 }
 .qx-input_box .suffix{
     padding: 0 25px 0 15px;
@@ -953,6 +954,10 @@ textarea:focus{
 .qx-textarea .qx-input_count{
     padding: 0 5px 5px;
     align-items: flex-end;
+}
+.qx-textarea.error textarea{
+    border-color:#F04832;
+    box-shadow: 0 0 6px 0 rgba(240, 72, 50, 0.6);
 }
 .qx-input_box.medium input{
     height: 36px;
@@ -1296,4 +1301,35 @@ textarea:focus{
 }
 .qx-message .iconmsg-warning {
 	color: #e6a23c
+}
+.qx-form-item{
+    margin: 0 0 22px;
+}
+.qx-form-item:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.qx-form-item>.qx-form_label{
+    float: left;
+    height: 40px;
+    color: #606266;
+    line-height: 40px;
+    text-align: right;
+    padding: 0 15px 0 0;
+}
+.qx-form_con{
+    float: left;
+    font-size: 14px;
+    line-height: 40px;
+    position: relative;
+}
+.qx-form_error{
+    color: #f56c6c;
+    font-size: 12px;
+    line-height: 1;
+    padding-top: 4px;
+    position: absolute;
+    top: 100%;
+    left: 0;
 }

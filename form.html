@@ -21,21 +21,26 @@
                 <p>包括各种表单项，比如输入框、选择器、开关、单选框、多选框等。</p>
             </div>
             <div class="content">
-                <qx-form label-width="70px">
-                    <qx-form-item label="活动名称" required>
-                        <qx-input></qx-input>
-                        <qx-input clearable></qx-input>
-                        <qx-input type="password" show-pass></qx-input>
-                        <qx-input placeholder="请输入内容" show-word maxlength="10" minlength="2"></qx-input>
-                        <qx-input placeholder="请输入内容" type="textarea" show-word maxlength="100" minlength="10"></qx-input>
+                <qx-form label-width="90px">
+                    <qx-form-item label="输入框">
+                        <qx-input required name="text"></qx-input>
                     </qx-form-item>
-                    <qx-form-item label="活动区域" required>
-                        <qx-select placeholder="请选择" name="sex">
-                            <qx-option value="黄金糕"></qx-option>
-                            <qx-option value="双皮奶"></qx-option>
-                            <qx-option value="蚵仔煎"></qx-option>
-                            <qx-option value="龙须面"></qx-option>
-                            <qx-option value="北京烤鸭"></qx-option>
+                    <qx-form-item label="密码框">
+                        <qx-input type="password" name="password" show-pass></qx-input>
+                    </qx-form-item>
+                    <qx-form-item label="文本域">
+                        <qx-input type="textarea" required show-word maxlength="50" name="textarea"></qx-input>
+                    </qx-form-item>
+                    <qx-form-item label="活动时间">
+                        <span class="date">
+                            <qx-date name="date"></qx-date>
+                        </span>
+                        <span class="time">
+                            <qx-time name="time"></qx-time>
+                        </span>
+                    </qx-form-item>
+                    <qx-form-item label="下拉框">
+                        <qx-select placeholder="请选择" name="select">
                             <qx-option value="黄金糕"></qx-option>
                             <qx-option value="双皮奶"></qx-option>
                             <qx-option value="蚵仔煎"></qx-option>
@@ -43,33 +48,73 @@
                             <qx-option value="北京烤鸭"></qx-option>
                         </qx-select>
                     </qx-form-item>
-                    <qx-form-item label="活动时间" required>
-                        <qx-date></qx-date>
-                        <qx-time></qx-time>
+                    <qx-form-item label="复选框">
+                        <qx-checkbox value="xiezuo" checked name="checkbox">写作</qx-checkbox>
+                        <qx-checkbox value="yuedu" name="checkbox">阅读</qx-checkbox>
+                        <qx-checkbox value="fadai" name="checkbox">发呆</qx-checkbox>
                     </qx-form-item>
-                    <qx-form-item label="活动时间" required>
-                        <qx-radio></qx-radio>
-                        <qx-radio></qx-radio>
+                    <qx-form-item label="单选框">
+                        <qx-radio value="nan" checked name="radio">男</qx-radio>
+                        <qx-radio value="nv" name="radio">女</qx-radio>
                     </qx-form-item>
-                    <qx-form-item label="活动时间" required>
-                        <qx-radio></qx-radio>
-                        <qx-radio></qx-radio>
-                    </qx-form-item>
-                    <qx-form-item label="活动时间" required>
-                        <qx-checkbox></qx-checkbox>
-                        <qx-checkbox></qx-checkbox>
-                        <qx-checkbox></qx-checkbox>
-                    </qx-form-item>
-                    <qx-form-item label="活动时间" required>
-                        <qx-checkbox></qx-checkbox>
-                        <qx-checkbox></qx-checkbox>
-                        <qx-checkbox></qx-checkbox>
-                    </qx-form-item>
-                    <qx-form-item label="活动时间" required>
-                        <qx-switch></qx-switch>
+                    <qx-form-item label="开关">
+                        <qx-switch name="switch"></qx-switch>
                     </qx-form-item>
                     <qx-form-item>
-                        <qx-button>提交</qx-button>
+                        <qx-button native="submit">提交</qx-button>
+                        <qx-button native="reset">重置</qx-button>
+                    </qx-form-item>
+                </qx-form>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>表单验证</h3>
+                <p>在防止用户犯错的前提下，尽可能让用户更早地发现并纠正错误。</p>
+            </div>
+            <div class="content">
+                <qx-form label-width="90px">
+                    <qx-form-item label="输入框" required>
+                        <qx-input name="text"></qx-input>
+                    </qx-form-item>
+                    <qx-form-item label="密码框" required>
+                        <qx-input type="password" name="password" show-pass></qx-input>
+                    </qx-form-item>
+                    <qx-form-item label="文本域" required>
+                        <qx-input type="textarea" name="textarea"></qx-input>
+                    </qx-form-item>
+                    <qx-form-item label="活动时间" required>
+                        <span class="date2">
+                            <qx-date name="date"></qx-date>
+                        </span>
+                        <span class="time2">
+                            <qx-time name="time"></qx-time>
+                        </span>
+                    </qx-form-item>
+                    <qx-form-item label="下拉框" required>
+                        <qx-select placeholder="请选择" name="select">
+                            <qx-option value="黄金糕"></qx-option>
+                            <qx-option value="双皮奶"></qx-option>
+                            <qx-option value="蚵仔煎"></qx-option>
+                            <qx-option value="龙须面"></qx-option>
+                            <qx-option value="北京烤鸭"></qx-option>
+                        </qx-select>
+                    </qx-form-item>
+                    <qx-form-item label="复选框" required>
+                        <qx-checkbox value="xiezuo" name="checkbox">写作</qx-checkbox>
+                        <qx-checkbox value="yuedu" name="checkbox">阅读</qx-checkbox>
+                        <qx-checkbox value="fadai" name="checkbox">发呆</qx-checkbox>
+                    </qx-form-item>
+                    <qx-form-item label="单选框" required>
+                        <qx-radio value="nan" name="radio">男</qx-radio>
+                        <qx-radio value="nv" name="radio">女</qx-radio>
+                    </qx-form-item>
+                    <qx-form-item label="开关" required>
+                        <qx-switch name="switch"></qx-switch>
+                    </qx-form-item>
+                    <qx-form-item>
+                        <qx-button type="primary">提交</qx-button>
+                        <qx-button native="reset">重置</qx-button>
                     </qx-form-item>
                 </qx-form>
             </div>
@@ -165,5 +210,35 @@
 
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script src="images/js/admin.min.js"></script>
+    <script type="text/javascript">
+        $('.time').DatePicker({
+            format: 'HH:mm:ss',
+            min: '06:00:00',
+            max: '20:00:00',
+            hide: function (val, type){
+                console.log(val, type);
+            }
+        });
+        $('.date').DatePicker({
+            format:'YYYY-MM-DD',
+            hide: function (val, type){
+                console.log(val, type);
+            }
+        });
+        $('.time2').DatePicker({
+            format: 'HH:mm:ss',
+            min: '06:00:00',
+            max: '20:00:00',
+            hide: function (val, type){
+                console.log(val, type);
+            }
+        });
+        $('.date2').DatePicker({
+            format:'YYYY-MM-DD',
+            hide: function (val, type){
+                console.log(val, type);
+            }
+        });
+    </script>
 </body>
 </html>
