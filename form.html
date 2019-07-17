@@ -26,7 +26,7 @@
                         <qx-input required name="text"></qx-input>
                     </qx-form-item>
                     <qx-form-item label="密码框">
-                        <qx-input type="password" name="password" show-pass></qx-input>
+                        <qx-input type="password" required name="password" show-pass></qx-input>
                     </qx-form-item>
                     <qx-form-item label="文本域">
                         <qx-input type="textarea" required show-word maxlength="50" name="textarea"></qx-input>
@@ -49,9 +49,11 @@
                         </qx-select>
                     </qx-form-item>
                     <qx-form-item label="复选框">
-                        <qx-checkbox value="xiezuo" checked name="checkbox">写作</qx-checkbox>
-                        <qx-checkbox value="yuedu" name="checkbox">阅读</qx-checkbox>
-                        <qx-checkbox value="fadai" name="checkbox">发呆</qx-checkbox>
+                        <qx-checkbox-group>
+                            <qx-checkbox value="xiezuo" checked name="checkbox">写作</qx-checkbox>
+                            <qx-checkbox value="yuedu" name="checkbox">阅读</qx-checkbox>
+                            <qx-checkbox value="fadai" name="checkbox">发呆</qx-checkbox>
+                        </qx-checkbox-group>
                     </qx-form-item>
                     <qx-form-item label="单选框">
                         <qx-radio value="nan" checked name="radio">男</qx-radio>
@@ -103,9 +105,12 @@
                         </qx-select>
                     </qx-form-item>
                     <qx-form-item label="复选框" prop="checkbox">
-                        <qx-checkbox value="xiezuo" name="checkbox">写作</qx-checkbox>
-                        <qx-checkbox value="yuedu" name="checkbox">阅读</qx-checkbox>
-                        <qx-checkbox value="fadai" name="checkbox">发呆</qx-checkbox>
+                        <qx-checkbox-group>
+                            <qx-checkbox value="xiezuo" name="checkbox">写作</qx-checkbox>
+                            <qx-checkbox value="yuedu" name="checkbox">阅读</qx-checkbox>
+                            <qx-checkbox value="fadai" name="checkbox">发呆</qx-checkbox>
+                            <qx-checkbox value="kanshu" name="checkbox">看书</qx-checkbox>
+                        </qx-checkbox-group>
                     </qx-form-item>
                     <qx-form-item label="单选框" prop="radio">
                         <qx-radio value="nan" name="radio">男</qx-radio>
@@ -118,7 +123,9 @@
                         <span class="submit">
                             <qx-button type="primary">提交</qx-button>
                         </span>
-                        <qx-button native="reset">重置</qx-button>
+                        <span class="reset">
+                            <qx-button native="reset">重置</qx-button>
+                        </span>
                     </qx-form-item>
                 </qx-form>
             </div>
@@ -222,7 +229,7 @@
                 </tr>
                 <tr>
                     <td>checkForm</td>
-                    <td>任一表单项被校验后触发</td>
+                    <td>任一表单项被校验后触发，参数：1、rule 检验规则，2、type 类型（submit / reset），valid 回调函数</td>
                     <td>被校验的表单项 prop 值，校验是否通过，错误消息（如果存在）</td>
                 </tr>
             </tbody>
@@ -253,10 +260,10 @@
 
         const rule = {
             input: {
-                min: 5,
-                max: 10,
-                required: true,
-                message: 'input必填，并且长度在5 到 10个字符'
+                min: 5,                                        // 最小值
+                max: 10,                                       // 最大值
+                required: true,                                // 必填值
+                message: 'input必填，并且长度在5 到 10个字符'    // 提示语
             },
             password: {
                 min: 8,
@@ -281,8 +288,10 @@
                 message: 'select是必填项'
             },
             checkbox: {
+                min: 2,
+                max: 3,
                 required: true,
-                message: 'checkbox 至少选择一项'
+                message: 'checkbox 至少选择二项，最多三项'
             },
             radio: {
                 required: true,
@@ -293,8 +302,19 @@
         $('.checkForm').validate(rule);
 
         $('.submit button').on('click', function() {
-            $('.checkForm').validate({type: 'submit', ...rule});
+            $('.checkForm').validate({
+                ...rule,
+                type: 'submit',
+                valid: function (e){
+                    console.log(e);
+                }
+            });
         });
+
+        $('.reset button').on('click', function() {
+            $('.checkForm').validate({type: 'reset', ...rule});
+        });
+
     </script>
 </body>
 </html>

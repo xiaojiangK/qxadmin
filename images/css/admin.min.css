@@ -487,7 +487,6 @@ qx-checkbox,qx-radio,qx-select,qx-switch,qx-button{
     padding: 5px 15px 0 10px;
 }
 .qx-input{
-    width: 100%;
     font-size: 14px;
     position: relative;
     display: inline-block;
@@ -1311,18 +1310,17 @@ textarea:focus{
     clear:both;
 }
 .qx-form-item>.qx-form_label{
-    float: left;
-    height: 40px;
     color: #606266;
-    line-height: 40px;
     text-align: right;
     padding: 0 15px 0 0;
+    display: table-cell;
+    vertical-align: middle;
 }
 .qx-form_con{
-    float: left;
     font-size: 14px;
-    line-height: 40px;
     position: relative;
+    display: table-cell;
+    vertical-align: middle;
 }
 .qx-form_error{
     color: #f56c6c;
@@ -1333,7 +1331,7 @@ textarea:focus{
     top: 100%;
     left: 0;
 }
-.c-datepicker-date-editor.error{
+.qx-datepicker-editor.error{
     border-color:#F04832;
     box-shadow: 0 0 6px 0 rgba(240, 72, 50, 0.6);
 }
