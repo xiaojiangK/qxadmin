@@ -66,7 +66,9 @@
                 <qx-button type="primary" icon="iconseekicon">搜索</qx-button>
                 <qx-button type="primary" icon="iconadd">添加代理商</qx-button>
                 <qx-button type="primary" icon="iconloading">加载中</qx-button>
-                <qx-button type="primary" icon="iconUploadCloud" upload>上传</qx-button>
+                <span class="uploadFile">
+                    <qx-button type="primary" icon="iconUploadCloud" upload>上传</qx-button>
+                </span>
                 <qx-button type="primary" icon="iconremove">批量删除</qx-button>
             </div>
         </div>
@@ -129,13 +131,38 @@
                 </tr>
             </tbody>
         </table>
+        <h2>Button Event</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>事件名称</th>
+                    <th>说明</th>
+                    <th>回调参数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>upload</td>
+                    <td>上传文件触发的事件</td>
+                    <td>上传的文件后的返回值</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script src="images/js/admin.min.js"></script>
     <script>
-        $('#fileUp').change(function (){
-            console.log($(this)[0].files);
+        $('.uploadFile #fileUp').change(function (){
+            $(this).upload({
+                url: 'upload.php',
+                success: function (res){
+                    console.log(res);
+                },
+                fail(err) {
+                    console.log(err);
+                }
+            });
         });
     </script>
 </body>

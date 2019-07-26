@@ -867,6 +867,10 @@ textarea:focus{
     border-color: transparent;
     background: transparent;
 }
+.qx-button.text:hover{
+    background: transparent;
+    border-color: transparent;
+}
 .qx-button.text.is-disabled{
     color: #c0c4cc;   
 }
@@ -1076,10 +1080,15 @@ textarea:focus{
     vertical-align: middle;
 }
 .qx-tab-pane{
+    height: 100%;
     display: none;
 }
 .qx-tab-pane.active{
     display: block;
+}
+.qx-tab-pane iframe{
+    width: 100%;
+    height: 100%;
 }
 .qx-tabs .qx-tabs_head{
     padding: 0;
@@ -1235,11 +1244,17 @@ textarea:focus{
 	position: fixed;
 	overflow: hidden;
 	align-items: center;
-	box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     -webkit-animation: .5s message;
     animation: .5s message;
 	background-color: #edf2fc;
 	border: 1px solid #ebeef5;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
 	transition: transform .4s, opacity .4s;
 	padding: 15px 15px 15px 20px
 }
@@ -1344,4 +1359,138 @@ textarea:focus{
 .qx-datepicker-editor.error{
     border-color:#F04832;
     box-shadow: 0 0 6px 0 rgba(240, 72, 50, 0.6);
+}
+.qx-tooltip{
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    position: fixed;
+    font-size: 14px;
+    max-width: 380px;
+    border-radius: 4px;
+    padding: 14px 17px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: rgba(0,0,0,.56);
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -ms-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}
+.qx-tooltip.top{
+    top: 10%;
+}
+.qx-tooltip.bottom{
+    top: 90%;
+}
+.qx-tooltip.left{
+    left: 10%;
+}
+.qx-tooltip.right{
+    left: auto;
+    right: 0;
+}
+.qx-table {
+    width: 100%;
+    border-collapse: collapse;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    flex: 1;
+    width: 100%;
+    max-width: 100%;
+    background-color: #fff;
+    font-size: 14px;
+    color: #606266
+}
+.qx-table thead {
+    color: #666;
+    background: rgba(255, 121, 5, .2);
+}
+.qx-table th,td {
+	height: 30px;
+    padding: 12px 0;
+    min-width: 0;
+    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-all;
+    line-height: 23px;
+    padding-left: 10px;
+    padding-right: 10px;
+	border-bottom: 1px solid #ebeef5
+}
+.qx-table .checkboxs{
+    width: 14px;
+    height: 14px;
+    z-index: 1;
+    position: relative;
+    border-radius: 2px;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid #dcdfe6;
+    transition: border-color .25s cubic-bezier(.71,-.46,.29,1.46),background-color .25s cubic-bezier(.71,-.46,.29,1.46);
+}
+.qx-table tr .checkboxs.active, .qx-table tr .checkboxs.fuzzy{
+    background-color: #FF7905;
+    border-color: #FF7905;
+}
+.qx-table tr .checkboxs:after{
+    box-sizing: content-box;
+    content: "";
+    border: 1px solid #fff;
+    border-left: 0;
+    border-top: 0;
+    height: 7px;
+    left: 4px;
+    position: absolute;
+    top: 1px;
+    transform: rotate(45deg) scaleY(0);
+    width: 3px;
+    transition: transform .15s ease-in .05s;
+    transform-origin: center;
+}
+.qx-table tr .checkboxs.active:after{
+    transform: rotate(45deg) scaleY(1);
+}
+.qx-table tr .checkboxs.fuzzy:after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    left: 0;
+    right: 0;
+    top: 5px;
+    border: none;
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    transform: scale(.5);
+}
+.qx-table tr .checkboxs input{
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+.qx-table tbody tr {
+	cursor: pointer
+}
+.qx-evenRow {
+	background: #fff
+}
+.qx-oddRow {
+	background: #fafafa
+}
+.qx-curRow {
+	background: #f5f8fa
 }

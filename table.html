@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="740092856@qq.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="images/css/admin.min.css" />
+    <link rel="shortcut icon" href="https://images.lfwin.com/lfwin/images/OEM/fordar/v2_flogo.png" type="image/x-icon">
+    <title>admin-table</title>
+</head>
+<body>
+    <div class="page-container">
+        <div class="admim-title">
+            <h2>Table 表格</h2>
+            <p>用于展示多条结构类似的数据，可对数据进行排序、筛选、对比或其他自定义操作。</p>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>基础表格</h3>
+                <p>基础的表格展示用法。</p>
+            </div>
+            <div class="content">
+                <table id="table" class="qx-table"></table>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>带斑马纹表格</h3>
+                <p>使用带斑马纹的表格，可以更容易区分出不同行的数据。</p>
+            </div>
+            <div class="content">
+                <table id="table2" class="qx-table"></table>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>带边框表格</h3>
+            </div>
+            <div class="content">
+                <table id="table3" class="qx-table"></table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="attributes">
+        <h2>Table Attributes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>参数</th>
+                    <th>说明</th>
+                    <th>类型</th>
+                    <th>可选值</th>
+                    <th>默认值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>evenRowClass</td>
+                    <td>表格偶数行样式</td>
+                    <td>string</td>
+                    <td>qx-evenRow</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>oddRowClass</td>
+                    <td>表格奇数行样式</td>
+                    <td>string</td>
+                    <td>qx-oddRow</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>curRowClass</td>
+                    <td>表格hover样式</td>
+                    <td>string</td>
+                    <td>qx-curRow</td>
+                    <td>qx-curRow</td>
+                </tr>
+                <tr>
+                    <td>overflowHeight</td>
+                    <td>出现滚动条的高度</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>260px</td>
+                </tr>
+                <tr>
+                    <td>border</td>
+                    <td>带边框表格</td>
+                    <td>string</td>
+                    <td>qx-border</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>titles</td>
+                    <td>数据格式结构</td>
+                    <td>array</td>
+                    <td>—</td>
+                    <td>[]</td>
+                </tr>
+                <tr>
+                    <td>data</td>
+                    <td>数据列表</td>
+                    <td>array</td>
+                    <td>—</td>
+                    <td>[]</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="images/js/admin.min.js"></script>
+    <script>
+        var data=[
+            {id:"1",name:"老大",age:"22",height:"172cm",weight:"68kg",sex:"男"},
+            {id:"2",name:"老二",age:"21",height:"170cm",weight:"66kg",sex:"男"},
+            {id:"3",name:"老三",age:"20",height:"168cm",weight:"64kg",sex:"女"},
+            {id:"4",name:"老五",age:"19",height:"166cm",weight:"62kg",sex:"男"},
+        ];
+        $('#table').table({
+            // evenRowClass:'qx-evenRow',//表格偶数行样式
+            // oddRowClass:'qx-oddRow',//表格奇数行样式
+            curRowClass:'qx-curRow',//表格hover样式
+            overflowHeight: "150px",//出现滚动条的高度
+            titles:[{
+                title: "id",
+                keyName: "id",
+                width: 40,
+                checkBox: false
+            },
+            {
+                title:"姓名",
+                keyName:"name"
+            },{
+                title:"年龄",
+                keyName:"age"
+            },{
+                title:"身高",
+                keyName:"height"
+            },{
+                title:"体重",
+                keyName:"weight"
+            },{
+                title:"性别",
+                keyName:"sex"
+            }],
+            data
+        });
+
+        // 带斑马纹
+        $('#table2').table({
+            evenRowClass:'qx-evenRow',//表格偶数行样式
+            oddRowClass:'qx-oddRow',//表格奇数行样式
+            curRowClass:'qx-curRow',//表格hover样式
+            overflowHeight: "260px",//出现滚动条的高度
+            titles:[{
+                title: "id",
+                keyName: "id",
+                width: 40,
+                checkBox: true
+            },
+            {
+                title:"姓名",
+                keyName:"name"
+            },{
+                title:"年龄",
+                keyName:"age",
+                width: 60
+            },{
+                title:"身高",
+                keyName:"height"
+            },{
+                title:"体重",
+                keyName:"weight"
+            },{
+                title:"性别",
+                keyName:"sex"
+            }],
+            data
+        });
+        
+        // 带边框
+        $('#table3').table({
+            border: 'qx-border',//表格带边框样式
+            evenRowClass:'qx-evenRow',//表格偶数行样式
+            oddRowClass:'qx-oddRow',//表格奇数行样式
+            curRowClass:'qx-curRow',//表格hover样式
+            overflowHeight: "260px",//出现滚动条的高度
+            titles:[{
+                title: "id",
+                keyName: "id",
+                width: 40,
+                checkBox: true
+            },
+            {
+                title:"姓名",
+                keyName:"name"
+            },{
+                title:"年龄",
+                keyName:"age",
+                width: 60
+            },{
+                title:"身高",
+                keyName:"height"
+            },{
+                title:"体重",
+                keyName:"weight"
+            },{
+                title:"性别",
+                keyName:"sex"
+            }],
+            data
+        });
+    </script>
+</body>
+</html>
