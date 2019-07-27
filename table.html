@@ -57,6 +57,27 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>titles</td>
+                    <td>数据格式结构</td>
+                    <td>array</td>
+                    <td>—</td>
+                    <td>[]</td>
+                </tr>
+                <tr>
+                    <td>data</td>
+                    <td>数据列表</td>
+                    <td>array</td>
+                    <td>—</td>
+                    <td>[]</td>
+                </tr>
+                <tr>
+                    <td>border</td>
+                    <td>带边框表格</td>
+                    <td>string</td>
+                    <td>qx-border</td>
+                    <td>—</td>
+                </tr>
+                <tr>
                     <td>evenRowClass</td>
                     <td>表格偶数行样式</td>
                     <td>string</td>
@@ -84,26 +105,27 @@
                     <td>—</td>
                     <td>260px</td>
                 </tr>
+            </tbody>
+        </table>
+        <h2>Table Event</h2>
+        <table>
+            <thead>
                 <tr>
-                    <td>border</td>
-                    <td>带边框表格</td>
-                    <td>string</td>
-                    <td>qx-border</td>
-                    <td>—</td>
+                    <td>事件名称</td>
+                    <td>说明</td>
+                    <td>回调参数</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>checked</td>
+                    <td>监听获取当前选择的元素ID</td>
+                    <td>Array</td>
                 </tr>
                 <tr>
-                    <td>titles</td>
-                    <td>数据格式结构</td>
-                    <td>array</td>
-                    <td>—</td>
-                    <td>[]</td>
-                </tr>
-                <tr>
-                    <td>data</td>
-                    <td>数据列表</td>
-                    <td>array</td>
-                    <td>—</td>
-                    <td>[]</td>
+                    <td>switch</td>
+                    <td>监听获取当前开关的元素ID</td>
+                    <td>Object</td>
                 </tr>
             </tbody>
         </table>
@@ -113,38 +135,51 @@
     <script src="images/js/admin.min.js"></script>
     <script>
         var data=[
-            {id:"1",name:"老大",age:"22",height:"172cm",weight:"68kg",sex:"男"},
-            {id:"2",name:"老二",age:"21",height:"170cm",weight:"66kg",sex:"男"},
-            {id:"3",name:"老三",age:"20",height:"168cm",weight:"64kg",sex:"女"},
-            {id:"4",name:"老五",age:"19",height:"166cm",weight:"62kg",sex:"男"},
+            {id:"1",img: '<img src="https://www.liankaa.com/public/img/index-pic15.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:true,control:"<i class='iconfont iconedit'></i> <i class='iconfont iconremove'></i>"},
+            {id:"2",img: '<img src="https://www.liankaa.com/public/img/index-pic15.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:"<i class='iconfont iconedit'></i> <i class='iconfont iconremove'></i>"},
+            {id:"3",img: '<img src="https://www.liankaa.com/public/img/index-pic15.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:true,control:"<i class='iconfont iconedit'></i> <i class='iconfont iconremove'></i>"},
+            {id:"4",img: '<img src="https://www.liankaa.com/public/img/index-pic15.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:"<i class='iconfont iconedit'></i> <i class='iconfont iconremove'></i>"},
         ];
+
         $('#table').table({
             // evenRowClass:'qx-evenRow',//表格偶数行样式
             // oddRowClass:'qx-oddRow',//表格奇数行样式
             curRowClass:'qx-curRow',//表格hover样式
-            overflowHeight: "150px",//出现滚动条的高度
+            overflowHeight: "250px",//出现滚动条的高度
             titles:[{
-                title: "id",
-                keyName: "id",
-                width: 40,
+                title: "ID",
+                keyName: "id",      // 表格各项操作中默认获取第一个元素ID
+                width: 80,
                 checkBox: false
+            },{
+                title:"头像",
+                keyName:"img"
             },
             {
-                title:"姓名",
+                title:"登录名",
                 keyName:"name"
             },{
-                title:"年龄",
-                keyName:"age"
+                title:"邮箱",
+                keyName:"email"
             },{
-                title:"身高",
-                keyName:"height"
+                title:"角色",
+                keyName:"role"
             },{
-                title:"体重",
-                keyName:"weight"
+                title:"加入时间",
+                keyName:"add_time"
             },{
-                title:"性别",
-                keyName:"sex"
+                title:"状态",
+                keyName:"status",
+                switch: true,
+                width: 100
+            },{
+                title:"操作",
+                keyName:"control",
+                width: 100
             }],
+            switch(e) {
+                console.log(e);
+            },
             data
         });
 
@@ -157,26 +192,37 @@
             titles:[{
                 title: "id",
                 keyName: "id",
-                width: 40,
+                width: 80,
                 checkBox: true
             },
             {
-                title:"姓名",
+                title:"登录名",
                 keyName:"name"
             },{
-                title:"年龄",
-                keyName:"age",
-                width: 60
+                title:"邮箱",
+                keyName:"email"
             },{
-                title:"身高",
-                keyName:"height"
+                title:"角色",
+                keyName:"role"
             },{
-                title:"体重",
-                keyName:"weight"
+                title:"加入时间",
+                keyName:"add_time"
             },{
-                title:"性别",
-                keyName:"sex"
+                title:"状态",
+                keyName:"status",
+                switch: true,
+                width: 150
+            },{
+                title:"操作",
+                keyName:"control",
+                width: 150
             }],
+            checked(e) {
+                console.log(e);
+            },
+            switch(e) {
+                console.log(e);
+            },
             data
         });
         
@@ -190,26 +236,34 @@
             titles:[{
                 title: "id",
                 keyName: "id",
-                width: 40,
+                width: 80,
                 checkBox: true
             },
             {
-                title:"姓名",
+                title:"登录名",
                 keyName:"name"
             },{
-                title:"年龄",
-                keyName:"age",
-                width: 60
+                title:"邮箱",
+                keyName:"email"
             },{
-                title:"身高",
-                keyName:"height"
+                title:"角色",
+                keyName:"role"
             },{
-                title:"体重",
-                keyName:"weight"
+                title:"加入时间",
+                keyName:"add_time"
             },{
-                title:"性别",
-                keyName:"sex"
+                title:"状态",
+                keyName:"status",
+                switch: true,
+                width: 150
+            },{
+                title:"操作",
+                keyName:"control",
+                width: 150
             }],
+            switch(e) {
+                console.log(e);
+            },
             data
         });
     </script>
