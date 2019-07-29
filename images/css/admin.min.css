@@ -875,6 +875,7 @@ textarea:focus{
     color: #c0c4cc;   
 }
 .qx-button .iconfont{
+    font-size: 14px;
     vertical-align: middle;
 }
 .qx-button .iconfont+span{
@@ -949,10 +950,10 @@ textarea:focus{
     display: inline-block;
     transition: .2s cubic-bezier(.645,.045,.355,1) all;
 }
-.qx-input-suffix .iconclose-{
+.qx-input-suffix .icon-closes{
     opacity: 0;
 }
-.qx-input_box:hover .iconclose-{
+.qx-input_box:hover .icon-closes{
     opacity: 1;
 }
 .qx-input_count{
@@ -1299,7 +1300,7 @@ textarea:focus{
 .qx-message_con:focus {
 	outline-width: 0
 }
-.qx-message .iconclose {
+.qx-message .icon-forks {
 	position: absolute;
 	top: 50%;
 	right: 15px;
@@ -1308,22 +1309,22 @@ textarea:focus{
 	color: #c0c4cc;
 	font-size: 16px
 }
-.qx-message .iconclose:focus {
+.qx-message .icon-forks:focus {
 	outline-width: 0
 }
-.qx-message .iconclose:hover {
+.qx-message .icon-forks:hover {
 	color: #909399
 }
-.qx-message .iconmsg-success {
+.qx-message .icon-success {
 	color: #67c23a
 }
-.qx-message .iconmsg-error {
+.qx-message .icon-error {
 	color: #f56c6c
 }
-.qx-message .iconmsg-info {
+.qx-message .icon-info {
 	color: #909399
 }
-.qx-message .iconmsg-warning {
+.qx-message .icon-warning {
 	color: #e6a23c
 }
 .qx-form-item{
@@ -1577,7 +1578,7 @@ textarea:focus{
 .color-box .color-title{
     color: #303133;
 }
-.topmenu{
+.qx-top{
     width: 100%;
     height: 45px;
     color: #fff;
@@ -1586,22 +1587,22 @@ textarea:focus{
     background-image: -ms-linear-gradient(#FF9415, #FF7200);
     background-image: linear-gradient(#FF9415, #FF7200);
 }
-.topmenu a{
+.qx-top a{
     color: #fff;
 }
-.topmenu .logo a{
+.qx-top .logo a{
     float: left;
     font-size: 18px;
     padding-left: 20px;
     line-height: 45px;
     width: 200px;
 }
-.topmenu .left_open{
+.qx-top .left_open{
     height: 45px;
     float: left;
     margin-left: 10px;
 }
-.topmenu .left_open i{
+.qx-top .left_open i{
     display: block;
     background: rgba(255,255,255,0.1);
     width: 32px;
@@ -1612,46 +1613,65 @@ textarea:focus{
     margin-top: 7px;
     cursor: pointer;
 }
-.topmenu .left_open i:hover{
+.qx-top .left_open i:hover{
     background: rgba(255,255,255,.2);
 }
-.topmenu .menu{
+.qx-top .menu{
     float: left;
     height: 34px;
     overflow: hidden;
     line-height: 34px;
     margin: 6px 0 0 25px;
 }
-.topmenu .menu li{
+.qx-top .menu li{
     float: left;
+    margin: 0 5px;
     padding: 0 12px;
     -webkit-transition: .2s all;
     -ms-transition: .2s all;
     transition: .2s all;
     border-radius: 4px;
 }
-.topmenu .menu li a{
+.qx-top .menu li a{
     font-size: 18px;
 }
-.topmenu .menu li span{
+.qx-top .menu li span{
     display: none;
     color: #FF7905;
+    margin: 0 0 0 6px;
 }
-.topmenu .menu li i{
+.qx-top .menu li i{
     font-size: 25px;
-    margin: 0 6px 0 0;
     vertical-align: middle;
 }
-.topmenu .menu li:hover{
+.qx-top .menu li:hover{
     background: #fff;
 }
-.topmenu .menu li:hover i{
+.qx-top .menu li:hover i{
     color: #FF7905;
 }
-.topmenu .menu li:hover span{
+.qx-top .menu li.active{
+    background: #fff;
+}
+.qx-top .menu li.active i{
+    color: #FF7905;
+}
+.qx-top .menu li.active span{
     display: inline-block;
 }
-.topmenu .right{
+.qx-top .menu li:hover span{
+    display: inline-block;
+}
+.qx-top .menu.text li.active a{
+    color: #FF7905;
+}
+.qx-top .menu.text li:hover{
+    background: #fff;
+}
+.qx-top .menu.text li:hover a{
+    color: #FF7905;
+}
+.qx-top .right{
     float: right;
     position: relative;
     padding: 0 20px;
@@ -1659,20 +1679,20 @@ textarea:focus{
     border-radius: 2px;
     box-sizing: border-box;
 }
-.topmenu .nav-item{
+.qx-top .nav-item{
     float: left;
     line-height: 45px;
     position: relative;
     vertical-align: middle;
 }
-.topmenu .nav-item.toggle{
+.qx-top .nav-item.toggle{
     height: 50px;
     position: relative;
 }
-.topmenu .nav-item.toggle:hover .nav-bg{
+.qx-top .nav-item.toggle:hover .nav-bg{
     width: 100%;
 }
-.topmenu .nav-item.toggle .nav-bg{
+.qx-top .nav-item.toggle .nav-bg{
     left: 0;
     bottom: 5px;
     height: 4px;
@@ -1681,7 +1701,7 @@ textarea:focus{
     transition: .2s all;
     background: #FFE4CD;
 }
-.topmenu .nav-item a{
+.qx-top .nav-item a{
     cursor: pointer;
     display: block;
     padding: 0 20px;
@@ -1689,7 +1709,7 @@ textarea:focus{
     transition: all .3s;
     -webkit-transition: all .3s;
 }
-.topmenu .icondown{
+.qx-top .icon-icondown{
     top: 0;
     right: 2px;
     cursor: pointer;
@@ -1698,7 +1718,7 @@ textarea:focus{
     -webkit-transition: all .1s;
     color: rgba(255, 255, 255, .7);
 }
-.topmenu .nav-child{
+.qx-top .nav-child{
     display: none;
     position: absolute;
     left: 0;
@@ -1714,19 +1734,122 @@ textarea:focus{
     border-radius: 2px;
     white-space: nowrap;
 }
-.topmenu .nav-child dd{
+.qx-top .nav-child dd{
     position: relative;
     transition: all .2s;
     -webkit-transition: all .2s;
 }
-.topmenu .nav-child dd:hover{
-    background: #f2f2f2;
+.qx-top .nav-child dd:hover{
+    background: #FFE4CD;
 }
-.topmenu .nav-child a{
+.qx-top .nav-child a{
     color: #333;
     cursor: pointer;
     display: block;
     padding: 0 20px;
     transition: all .3s;
     -webkit-transition: all .3s;
+}
+.icon .content>i{
+    font-size: 24px;
+    color: #606266;
+    vertical-align: middle;
+}
+.icon .method>.iconfont, .icon .method .qx-button{
+    margin: 0 20px;
+}
+.icon .group{
+    -webkit-user-select: unset;
+    -ms-user-select: unset;
+    user-select: unset;
+}
+.icon .group ul{
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+.icon .group li{
+    float: left;
+    color: #666;
+    font-size: 13px;
+    width: 16.66%;
+    height: 120px;
+    padding: 30px 0 0;
+    text-align: center;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+.icon .group li i{
+    display: block;
+    font-size: 32px;
+    margin-bottom: 15px;
+    color: #606266;
+    transition: color .15s linear;
+}
+.icon .group li span{
+    display: inline-block;
+    padding: 0 3px;
+    height: 1em;
+}
+.qx-leftnav{
+    top: 45px;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    width: 220px;
+    max-width: 220px;
+    overflow: auto;
+    overflow-x: hidden;
+    position: absolute;
+    overflow: hidden;
+    padding-top: 10px;
+    background-color: #fff;
+}
+.qx-leftnav #nav li{
+    -webkit-transition: .3s all;
+    -ms-transition: .3s all;
+    transition: .3s all;
+}
+.qx-leftnav #side-nav{
+    width: 220px;
+}
+.qx-leftnav #nav li a{
+    color: #333;
+    font-size: 14px;
+    display: block;
+    cursor: pointer;
+    transition: all .3s;
+    padding: 10px 15px 10px 15px;
+    border-left: 4px solid transparent;
+}
+.qx-leftnav #nav li i{
+    color: #666;
+    padding-right: 10px;
+    line-height: 14px;
+}
+.qx-leftnav #nav li span{
+    font-size: 14px;
+}
+.qx-leftnav #nav li .right i{
+    float: right;
+    color: #999;
+}
+.qx-leftnav #nav .sub-menu{
+    display: none;
+}
+.qx-leftnav #nav .sub-menu li a{
+    padding: 12px 15px 12px 30px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.qx-leftnav a.active{
+    color: #FF7905;
+    border-color: #FFE4CD;
+    background: #FFE4CD;
+}
+.qx-leftnav #nav .sub-menu .sub-menu li a{
+    padding-left: 45px;
 }
