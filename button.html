@@ -155,12 +155,8 @@
     <script>
         $('.uploadFile #fileUp').change(function (){
             $(this).upload({
-                url: 'upload.php',
                 success: function (res){
                     console.log(res);
-                },
-                fail(err) {
-                    console.log(err);
                 }
             });
         });
