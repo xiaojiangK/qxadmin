@@ -667,6 +667,10 @@
   content: "\e66e";
 }
 
+.icon-arrowright:before {
+  content: "\e678";
+}
+
 .icon-arrowup:before {
   content: "\e66f";
 }
@@ -674,8 +678,3 @@
 .icon-arrowdown:before {
   content: "\e677";
 }
-
-.icon-arrowright:before {
-  content: "\e678";
-}
-

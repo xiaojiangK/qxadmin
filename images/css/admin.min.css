@@ -574,7 +574,6 @@ textarea:focus{
 }
 .qx-select .qx-input_icon{
     color: #c0c4cc;
-    font-size: 18px;
     cursor: pointer;
     transition: transform .3s;
 }
@@ -703,6 +702,7 @@ textarea:focus{
 .qx-select_empty{
     margin: 0;
     color: #999;
+    display: none;
     text-align: center;
     padding: 0 0 10px;
     font-size: 14px;
@@ -845,13 +845,13 @@ textarea:focus{
 }
 .qx-button.primary{
     color: #fff;
-    background-color: #409eff;
-    border-color: #409eff;
+    background-color: #FF7D07;
+    border-color: #FF7D07;
 }
 .qx-button.primary:not(.is-disabled):hover{
     color:#fff;
-    background:#66b1ff;
-    border-color:#66b1ff;
+    background:#f79236;
+    border-color:#f79236;
 }
 .qx-button:not(.is-disabled):hover {
 	color: #409eff;
@@ -890,7 +890,7 @@ textarea:focus{
 		transform: rotate(1turn)
 	}
 }
-.qx-button .iconloading{
+.qx-button.is-loading .icon-loading{
     display: inline-block;
     animation: rotating 2s linear infinite;
 }
@@ -1315,16 +1315,16 @@ textarea:focus{
 .qx-message .icon-forks:hover {
 	color: #909399
 }
-.qx-message .icon-success {
+.icon-success {
 	color: #67c23a
 }
-.qx-message .icon-error {
+.icon-error {
 	color: #f56c6c
 }
-.qx-message .icon-info {
+.icon-info {
 	color: #909399
 }
-.qx-message .icon-warning {
+.icon-warning {
 	color: #e6a23c
 }
 .qx-form-item{
@@ -1927,7 +1927,7 @@ textarea:focus{
     margin: 0 8px;
     font-size: 18px;
 }
-@keyframes uploadAnima {
+@keyframes fadeIn {
     from {
         opacity: 0;
         margin-top: -30px
@@ -1937,7 +1937,7 @@ textarea:focus{
         margin-top: 0
     }
 }
-@-webkit-keyframes uploadAnima {
+@-webkit-keyframes fadeIn {
     from {
         opacity: 0;
         margin-top: -30px
@@ -1947,7 +1947,7 @@ textarea:focus{
         margin-top: 0
     }
 }
-@-ms-keyframes uploadAnima {
+@-ms-keyframes fadeIn {
     from {
         opacity: 0;
         margin-top: -30px
@@ -1956,4 +1956,101 @@ textarea:focus{
         opacity: 1;
         margin-top: 0
     }
+}
+.qx-msgbox{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-animation: fadeIn .3s;
+    -moz-animation: fadeIn .3s;
+    -ms-animation: fadeIn .3s;
+    animation: fadeIn .3s;
+    display: -webkit-flex;
+    display: -ms-flex;
+    z-index: 2001;
+    position: fixed;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+}
+.qx-msgbox .qx-box{
+    width: 420px;
+    z-index: 2001;
+    position: fixed;
+    font-size: 18px;
+    text-align: left;
+    overflow: hidden;
+    border-radius: 4px;
+    display: inline-block;
+    padding-bottom: 10px;
+    vertical-align: middle;
+    background-color: #fff;
+    border: 1px solid #ebeef5;
+    backface-visibility: hidden;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+}
+.qx-msgbox .qx-msg_header{
+    position: relative;
+    padding: 15px 15px 10px;
+}
+.qx-msgbox .qx-msg_title{
+    padding-left: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 1;
+    color: #303133;
+}
+.qx-msgbox .qx-msg_header i{
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    color: #909399;
+    position: absolute;
+}
+.qx-msgbox .qx-msg_header i:hover{
+    color: #FF7905;
+}
+.qx-msgbox .qx-msg_content{
+    position: relative;
+    padding: 10px 15px;
+    color: #606266;
+    font-size: 14px;
+}
+.qx-msgbox .qx-msg_content p{
+    margin: 0;
+    line-height: 24px;
+}
+.qx-msgbox .qx-msg_content .iconfont{
+    top: 50%;
+    font-size: 20px;
+    position: absolute;
+    transform: translateY(-46%);
+}
+.qx-msgbox .qx-msg_content .iconfont+.qx-msg_main{
+    padding-left: 30px;
+    padding-right: 12px;
+}
+.qx-msgbox .qx-msg_btns{
+    padding: 5px 15px 0;
+    text-align: right;
+}
+.qx-msgbox .qx-msg_input{
+    padding: 15px 0;
+}
+.qx-msgbox .qx-msg_input .qx-input{
+    width: 100%;
+}
+.mask{
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    z-index: 2000;
+    position: fixed;
+    background: #000;
 }
