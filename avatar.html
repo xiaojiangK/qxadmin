@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="740092856@qq.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="images/css/admin.min.css" />
+    <link rel="shortcut icon" href="https://images.lfwin.com/lfwin/images/OEM/fordar/v2_flogo.png" type="image/x-icon">
+    <title>admin-avatar</title>
+</head>
+<body>
+    <div class="page-container">
+        <div class="admim-title">
+            <h2>Avatar 头像</h2>
+            <p>用图标、图片或者字符的形式展示用户或事物信息。</p>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>基本用法</h3>
+                <p>通过 shape 和 size 设置头像的形状和大小。</p>
+            </div>
+            <div class="content">
+                <qx-avatar src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"></qx-avatar>
+                <qx-avatar src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" size="50"></qx-avatar>
+                <qx-avatar src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" size="medium"></qx-avatar>
+                <qx-avatar src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" size="small"></qx-avatar>
+                <qx-avatar src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" shape="square"></qx-avatar>
+                <qx-avatar src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" size="50" shape="square"></qx-avatar>
+                <qx-avatar src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" size="medium" shape="square"></qx-avatar>
+                <qx-avatar src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" size="small" shape="square"></qx-avatar>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>展示类型</h3>
+                <p>支持三种类型：图标、图片和字符</p>
+            </div>
+            <div class="content">
+                <qx-avatar>user</qx-avatar>
+                <qx-avatar icon="icon-user"></qx-avatar>
+                <qx-avatar src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"></qx-avatar>
+            </qx-avatar>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>图片如何适应容器框</h3>
+                <p>当展示类型为图片的时候，使用 fit 属性定义图片如何适应容器框，同原生 object-fit。</p>
+            </div>
+            <div class="content">
+                <qx-avatar shape="square" size="100" src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"></qx-avatar>
+                <qx-avatar shape="square" size="100" fit="fill" src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"></qx-avatar>
+                <qx-avatar shape="square" size="100" fit="none" src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"></qx-avatar>
+                <qx-avatar shape="square" size="100" fit="contain" src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"></qx-avatar>
+                <qx-avatar shape="square" size="100" fit="scale-down" src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"></qx-avatar>
+            </div>
+        </div>
+    </div>
+    
+    <div class="attributes">
+        <h2>Avatar Attributes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>参数</th>
+                    <th>说明</th>
+                    <th>类型</th>
+                    <th>可选值</th>
+                    <th>默认值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>icon</td>
+                    <td>设置头像的图标类型，参考 Icon 组件</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>size</td>
+                    <td>设置头像的大小</td>
+                    <td>number / string</td>
+                    <td>number / medium / small</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>shape</td>
+                    <td>设置头像的形状</td>
+                    <td>string</td>
+                    <td>circle / square</td>
+                    <td>circle</td>
+                </tr>
+                <tr>
+                    <td>src</td>
+                    <td>图片头像的资源地址</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>alt</td>
+                    <td>描述图像的替换文本</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>fit</td>
+                    <td>当展示类型为图片的时候，设置图片如何适应容器框</td>
+                    <td>string</td>
+                    <td>fill / contain / cover / none / scale-down</td>
+                    <td>cover</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="images/js/admin.min.js"></script>
+</body>
+</html>

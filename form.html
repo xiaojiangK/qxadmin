@@ -6,6 +6,7 @@
     <meta name="author" content="740092856@qq.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="images/css/admin.min.css" />
+    <link rel="stylesheet" type="text/css" href="images/css/datepicker.min.css" />
     <link rel="shortcut icon" href="https://images.lfwin.com/lfwin/images/OEM/fordar/v2_flogo.png" type="image/x-icon">
     <title>admin-form</title>
 </head>
@@ -230,6 +231,7 @@
     </div>
 
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="images/js/datepicker.min.js"></script>
     <script src="images/js/admin.min.js"></script>
     <script type="text/javascript">
         $('.time').DatePicker({
@@ -294,17 +296,16 @@
         $('.checkForm').validate(rule);
 
         $('.submit button').on('click', function() {
-            $('.checkForm').validate({
-                ...rule,
-                type: 'submit',
-                valid: function (e){
-                    console.log(e);
-                }
-            });
+            rule.type = 'submit';       // 类型
+            rule.valid = function (e){  // 回调函数
+                console.log(e);
+            };
+            $('.checkForm').validate(rule);
         });
 
         $('.reset button').on('click', function() {
-            $('.checkForm').validate({type: 'reset', ...rule});
+            rule.type = 'reset';
+            $('.checkForm').validate(rule);
         });
 
     </script>

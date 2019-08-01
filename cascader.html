@@ -20,8 +20,8 @@
                 <h3>基础用法</h3>
                 <p>有两种触发子菜单的方式</p>
             </div>
-            <div class="content">
-                
+            <div class="content cascader">
+                <qx-cascader placeholder="请选择书籍"></qx-cascader>
             </div>
         </div>
         <div class="item">
@@ -55,18 +55,144 @@
                     <td>city</td>
                     <td>—</td>
                 </tr>
+                <tr>
+                    <td>options</td>
+                    <td>可选项数据源</td>
+                    <td>array</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>placeholder</td>
+                    <td>输入框占位文本</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>请选择</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Cascader Event</h2>
+        <table>
+            <thead>
+                <tr>
+                    <td>事件名称</td>
+                    <td>说明</td>
+                    <td>回调参数</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>change</td>
+                    <td>当选中节点变化时触发</td>
+                    <td>选中节点的值</td>
+                </tr>
             </tbody>
         </table>
     </div>
 
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script src="images/js/admin.min.js"></script>
-    <script src="images/js/city.min.js"></script>
+    <!-- <script src="images/js/city.min.js"></script> -->
     <script>
         $(function (){
-            $(".cityBox").citySelect({
-                prov: "北京",
-                nodata: "none"
+            // $(".cityBox").citySelect({
+            //     prov: "北京",
+            //     nodata: "none"
+            // });
+            
+            var options = [{
+                value: 'zhinan',
+                label: '指南',
+                children: [{
+                    value: 'shejiyuanze',
+                    label: '指南原则',
+                    children: [{
+                        value: 'yizhi',
+                        label: '指南一致'
+                    }, {
+                        value: 'fankui',
+                        label: '指南反馈'
+                    }, {
+                        value: 'xiaolv',
+                        label: '指南效率'
+                    }, {
+                        value: 'kekong',
+                        label: '指南可控'
+                    }]
+                }, {
+                    value: 'daohang',
+                    label: '导航',
+                    children: [{
+                        value: 'cexiangdaohang',
+                        label: '侧向导航'
+                    }, {
+                        value: 'dingbudaohang',
+                        label: '顶部导航'
+                    }]
+                }]
+            }, {
+                value: 'zujian',
+                label: '组件',
+                children: [{
+                    value: 'shejiyuanze',
+                    label: '组件原则',
+                    children: [{
+                        value: 'yizhi',
+                        label: '组件一致'
+                    }, {
+                        value: 'fankui',
+                        label: '组件反馈'
+                    }, {
+                        value: 'xiaolv',
+                        label: '组件效率'
+                    }, {
+                        value: 'kekong',
+                        label: '组件可控'
+                    }]
+                }, {
+                    value: 'daohang',
+                    label: '导航',
+                    children: [{
+                        value: 'cexiangdaohang',
+                        label: '侧向导航'
+                    }, {
+                        value: 'dingbudaohang',
+                        label: '顶部导航'
+                    }]
+                }]
+            }, {
+                value: 'ziyuan',
+                label: '资源',
+                children: [{
+                    value: 'shejiyuanze',
+                    label: '资源原则',
+                    children: [{
+                        value: 'yizhi',
+                        label: '资源一致'
+                    }, {
+                        value: 'fankui',
+                        label: '资源反馈'
+                    }, {
+                        value: 'xiaolv',
+                        label: '资源效率'
+                    }, {
+                        value: 'kekong',
+                        label: '资源可控'
+                    }]
+                }, {
+                    value: 'daohang',
+                    label: '导航',
+                    children: [{
+                        value: 'cexiangdaohang',
+                        label: '侧向导航'
+                    }, {
+                        value: 'dingbudaohang',
+                        label: '顶部导航'
+                    }]
+                }]
+            }];
+            $('.cascader').cascader({
+                options
             });
         });
     </script>

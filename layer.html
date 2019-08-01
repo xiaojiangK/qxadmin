@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="740092856@qq.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="images/css/admin.min.css" />
+    <link rel="shortcut icon" href="https://images.lfwin.com/lfwin/images/OEM/fordar/v2_flogo.png" type="image/x-icon">
+    <title>admin-layer</title>
+</head>
+<body>
+    <div class="page-container">
+        <div class="admim-title">
+            <h2>Layer 弹层</h2>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>基础用法</h3>
+            </div>
+            <div class="content layer">
+                <qx-button>打开 Layer弹层</qx-button>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>自定义HTML</h3>
+            </div>
+            <div class="content layer-custom">
+                <qx-button>打开 layer-custom弹层</qx-button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="attributes">
+        <h2>Layer Attributes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>参数</th>
+                    <th>说明</th>
+                    <th>类型</th>
+                    <th>可选值</th>
+                    <th>默认值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>title</td>
+                    <td>弹层标题</td>
+                    <td>string</td>
+                    <td>—</td>
+                    <td>提示</td>
+                </tr>
+                <tr>
+                    <td>content</td>
+                    <td>弹层内容，当iframe为true时则是页面链接，否则是文本/HTML</td>
+                    <td>string / VNode</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>move</td>
+                    <td>是否可拖拽移动弹层</td>
+                    <td>boolean</td>
+                    <td>—</td>
+                    <td>true</td>
+                </tr>
+                <tr>
+                    <td>iframe</td>
+                    <td>是否使用iframe包含</td>
+                    <td>boolean</td>
+                    <td>—</td>
+                    <td>true</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Message-box Events</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>事件名称</th>
+                    <th>说明</th>
+                    <th>回调参数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>close</td>
+                    <td>点击关闭时触发的事件</td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="images/js/admin.min.js"></script>
+    <script>
+        $(function (){
+            $('.layer button').on('click', function (){
+                $(this).layer({
+                    content: './icon.html',
+                    close: function (){
+                        console.log('this is close');
+                    }
+                });
+            });
+            $('.layer-custom button').on('click', function (){
+                $(this).layer({
+                    iframe: false,
+                    content: '<ul style="padding: 50px 100px; color: #666; line-height: 30px"><li>我是custom内容</li><li>我是custom内容</li><li>我是custom内容</li><li>我是custom内容</li></ul>'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
