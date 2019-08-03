@@ -15,6 +15,8 @@
     box-sizing: border-box;
 }
 body,html{
+    width: 100%;
+    min-height: 100%;
     background:#fff;
 }
 body,html,h1,h2,h3,h4,p{
@@ -30,14 +32,14 @@ ul,li{
 a {
     text-decoration: none;
 }
-.page-container, .attributes{
+.demo-main, .attributes{
     color: #1f2d3d;
     padding: 40px;
 }
-.page-container .item .title{
+.demo-main .item .title{
     margin: 0 0 20px;
 }
-.page-container .content{
+.demo-main .content{
     border-radius: 3px;
     transition: .2s;
     padding: 24px;
@@ -47,26 +49,26 @@ a {
     user-select: none;
     border: 1px solid #ebebeb;
 }
-.page-container .content:hover{
+.demo-main .content:hover{
     border-color: #FF7905;
 }
-.page-container .item .group{
+.demo-main .item .group{
     overflow: hidden;
     margin: 0 0 15px;
 }
-.page-container .item .group:last-child{
+.demo-main .item .group:last-child{
     margin: 0;
 }
-.page-container h2{
+.demo-main h2{
     font-size: 28px;
     margin: 0 0 10px;
 }
-.page-container h3{
+.demo-main h3{
     font-size: 22px;
     font-weight: 400;
     margin: 55px 0 0;
 }
-.page-container p{
+.demo-main p{
     font-size: 14px;
     color: #5e6d82;
     margin: 10px 0;
@@ -1063,7 +1065,12 @@ textarea:focus{
     color: #FF7905;
 }
 .qx-tabs{
+    height: 100%;
     line-height: 1;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
     vertical-align: middle;
 }
 .qx-tab-pane{
@@ -1079,17 +1086,22 @@ textarea:focus{
 }
 .qx-tabs .qx-tabs_head{
     padding: 0;
+    width: 100%;
     height: 41px;
     position: relative;
-    margin: 0 0 15px;
+    border-bottom: 1px solid #e4e7ed;
 }
 .qx-tabs .qx-tabs_nav{
-    overflow: hidden;
     display: inline-block;
     border: 1px solid #e4e7ed;
     border-bottom: none;
     border-radius: 4px 4px 0 0;
     box-sizing: border-box;
+}
+.qx-tabs .qx-tabs_nav:after{
+    content: '';
+    clear: both;
+    display: block;
 }
 .qx-tabs .qx-tabs_item{
     padding: 0 20px;
@@ -1105,7 +1117,7 @@ textarea:focus{
     position: relative;
     border-bottom: 1px solid transparent;
     border-left: 1px solid #e4e7ed;
-    transition: .3s cubic-bezier(.645,.045,.355,1),padding .3s cubic-bezier(.645,.045,.355,1);
+    transition: .2s cubic-bezier(.645,.045,.355,1),padding .2s cubic-bezier(.645,.045,.355,1);
 }
 .qx-tabs .qx-tabs_item .icon-forks{
     padding: 1px;
@@ -1130,10 +1142,9 @@ textarea:focus{
     color: #FF7905;
     border-bottom-color: #fff;
 }
-.qx-tabs .qx-tabs_head{
-    border-bottom: 1px solid #e4e7ed;
-}
 .qx-tabs .qx-tabs_con{
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     position: relative;
 }
@@ -1215,13 +1226,11 @@ textarea:focus{
     display: block;
 }
 .qx-tabs.closable .qx-tabs_head{
-    min-height: 48px;
     overflow: hidden;
     background: none;
+    max-height: 48px;
     border: none;
-}
-.qx-tabs.closable .qx-tabs_con{
-    padding: 0 20px 20px;
+    height: auto;
 }
 @keyframes message {
 	0% {
@@ -1795,8 +1804,8 @@ textarea:focus{
     position: absolute;
     overflow: hidden;
     padding-top: 10px;
-    -webkit-transition: .3s all;
-    transition: .3s all;
+    -webkit-transition: .2s all;
+    transition: .2s all;
     background-color: #fff;
     -webkit-box-shadow:0px 0px 6px 0px rgba(63,63,63,0.2);
     box-shadow:0px 0px 6px 0px rgba(63,63,63,0.2);
@@ -1845,7 +1854,7 @@ textarea:focus{
 .qx-navmenu #nav .sub-menu .sub-menu li a{
     padding-left: 45px;
 }
-.page-container .content.nav{
+.demo-main .content.nav{
     height: 800px;
     overflow: inherit;
     position: relative;
@@ -2233,4 +2242,15 @@ textarea:focus{
 }
 .cascader-menus .menus li.active i{
     color: #FF7905;
+}
+#page-container{
+    top: 45px;
+    right: 0;
+    bottom: 0;
+    left: 220px;
+    z-index: 1;
+    overflow: hidden;
+    position: absolute;
+    -webkit-transition: .2s all;
+    transition: .2s all;
 }
