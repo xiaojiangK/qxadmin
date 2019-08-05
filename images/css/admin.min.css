@@ -1438,6 +1438,9 @@ textarea:focus{
     padding-right: 10px;
 	border-bottom: 1px solid #ebeef5
 }
+.qx-table td img{
+    width: 50px;
+}
 .qx-table .checkboxs{
     width: 14px;
     height: 14px;
