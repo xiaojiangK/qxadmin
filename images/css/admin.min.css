@@ -32,6 +32,12 @@ ul,li{
 a {
     text-decoration: none;
 }
+input::-ms-clear{
+    display:none;
+}
+input::-ms-reveal{
+    display:none;
+}
 .demo-main, .attributes{
     color: #1f2d3d;
     padding: 40px;
@@ -1373,6 +1379,10 @@ textarea:focus{
     max-width: 380px;
     border-radius: 4px;
     padding: 14px 17px;
+    -webkit-animation: fadeIn .3s;
+    -moz-animation: fadeIn .3s;
+    -ms-animation: fadeIn .3s;
+    animation: fadeIn .3s;
     -webkit-user-select: none;
     user-select: none;
     background: rgba(0,0,0,.56);
