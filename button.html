@@ -17,6 +17,19 @@
         </div>
         <div class="item">
             <div class="title">
+                <h3>Base 类操作</h3>
+                <p>调用 Base类各种方法</p>
+            </div>
+            <div class="content">
+                <qx-button>AJAX 请求类</qx-button>
+                <qx-button>确认框类</qx-button>
+                <qx-button>提示类</qx-button>
+                <qx-button>渲染类</qx-button>
+                <div class="demo"></div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title">
                 <h3>基础用法</h3>
                 <p>基础的按钮用法。</p>
             </div>
@@ -158,6 +171,58 @@
                 success: function (res){
                     console.log(res);
                 }
+            });
+        });
+
+        // Base 类
+        var base = new Base();
+        // ajax 请求类
+        $('.qx-button').eq(0).on('click', function (){
+            base.ajax({
+                successMsg: '提交成功！',
+                errorMsg: '提交失败！',
+                url: 'upload.php',
+                error (res){
+                    console.log(res);
+                },
+                success (res){
+                    console.log(res);
+                },
+                complete (res){
+                    console.log(res);
+                },
+                beforeSend (res){
+                    console.log(res);
+                }
+            });
+        });
+        
+        // 确认框类
+        $('.qx-button').eq(1).on('click', function (){
+            base.comfirm({
+                refresh: true,
+                msg: '你确定删除吗？'
+            });
+        });
+
+        // 提示类
+        $('.qx-button').eq(2).on('click', function (){
+            base.tips({
+                refresh: true,
+                msg: '我是一个提示类~'
+            });
+        });
+
+        // 渲染类
+        $('.qx-button').eq(3).on('click', function (){
+            base.render({
+                obj: '.demo',
+                html: `
+                    <div class="admim-title">
+                        <h2>我是render Class</h2>
+                        <p>主要职责是渲染各种HTML~~</p>
+                    </div>
+                `
             });
         });
     </script>
