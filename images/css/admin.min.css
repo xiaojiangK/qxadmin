@@ -1144,6 +1144,9 @@ textarea:focus{
 .qx-tabs .qx-tabs_item:first-child{
     border-left: none;
 }
+.qx-tabs .qx-tabs_item:first-child .icon-forks{
+    display: none;
+}
 .qx-tabs .qx-tabs_item.active{
     color: #FF7905;
     border-bottom-color: #fff;
