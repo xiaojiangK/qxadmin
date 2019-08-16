@@ -2321,3 +2321,6 @@ textarea:focus{
 .qx-header .right{
     float: right;
 }
+.pages{
+    margin: 30px 0;
+}

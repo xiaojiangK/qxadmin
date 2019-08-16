@@ -76,12 +76,14 @@
             var status = $(header).find('input[name=status]').val();
             if (!type) {
                 base.tips({
+                    type: 'error',
                     msg: '发送类别不能为空'
                 });
                 return;
             }
             if (!status) {
                 base.tips({
+                    type: 'error',
                     msg: '状态不能为空'
                 });
                 return;

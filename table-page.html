@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="740092856@qq.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="images/css/admin.min.css" />
+    <link rel="shortcut icon" href="https://images.lfwin.com/lfwin/images/OEM/fordar/v2_flogo.png" type="image/x-icon">
+    <title>admin-table-page</title>
+</head>
+<body>
+    <div class="demo-main">
+        <div class="admim-title">
+            <h2>tablePage 表格分页</h2>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>基础表格</h3>
+            </div>
+            <div class="content">
+                <div class="table">
+                    <table id="table" class="qx-table"></table>
+                </div>
+                <div class="pages">
+                    <qx-pagination background="gray"></qx-pagination>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="images/js/admin.min.js"></script>
+    <script>
+        var data=[
+            {id:"1",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:true,control:''},
+            {id:"2",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:''},
+            {id:"3",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:''},
+            {id:"4",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:''},
+        ];
+
+        // Base 类
+        var base = new Base();
+
+        // init
+        render(data);
+
+        function render(data = []) {
+            $('#table').table({
+                // evenRowClass:'qx-evenRow',//表格偶数行样式
+                // oddRowClass:'qx-oddRow',//表格奇数行样式
+                curRowClass:'qx-curRow',//表格hover样式
+                overflowHeight: "250px",//出现滚动条的高度
+                titles:[{
+                    title: "ID",
+                    keyName: "id",
+                    width: 80,
+                    checkBox: true
+                },{
+                    title:"头像",
+                    keyName:"img"
+                },
+                {
+                    title:"登录名",
+                    keyName:"name"
+                },{
+                    title:"邮箱",
+                    keyName:"email"
+                },{
+                    title:"角色",
+                    keyName:"role"
+                },{
+                    title:"加入时间",
+                    keyName:"add_time"
+                },{
+                    title:"状态",
+                    keyName:"status",
+                    switch: true,
+                    width: 100
+                },{
+                    title:"操作",
+                    keyName:"control",
+                    width: 100,
+                    default: "<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>"
+                }],
+                switch(e) {                     // 内置监听switch事件
+                    console.log(e);
+                },
+                event(e) {                      // 自定义事件监听
+                    console.log(e);
+                },
+                checked(e) {                    // 内置监听checked事件
+                    console.log(e);
+                },
+                data
+            });
+        }
+
+        // page config
+		$(".pages").createPage({
+			pageNum: 5,
+			current: 1,
+			backfun: function(e) {
+                base.ajax({
+                    url: 'upload.php',
+                    data: {
+                        current: e.current
+                    },
+                    success (res){
+                        render(data);
+                    }
+                });
+			}
+		});
+    </script>
+</body>
+</html>
