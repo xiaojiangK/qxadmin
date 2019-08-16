@@ -227,6 +227,7 @@
         });
 
         $('.submit button').on('click', function (){
+            var base = new Base();
             var username = $('.username').val();
             var password = $('.password').val();
             if (!username || username.length > 32) {
@@ -249,15 +250,22 @@
                 });
                 return;
             }
-            $.ajax({
-                url: '',
-                method: 'POST',
+
+            base.ajax({
+                successMsg: '提交成功！',
+                errorMsg: '提交失败！',
+                url: 'upload.php',
+                // refresh: true,
+                link: 'https://www.baidu.com',
                 data: {
                     username,
                     password
                 },
-                success: function (){
-                    console.log('this is success');
+                error (res){
+                    console.log(res);
+                },
+                success (res){
+                    console.log(res);
                 }
             });
         });

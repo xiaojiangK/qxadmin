@@ -175,13 +175,13 @@
                 <tr>
                     <td>ajax</td>
                     <td>ajax 请求类；发起网络请求</td>
-                    <td>url / obj / html / data / jsonp / type / async / refresh / dataType / error / success / complete / beforeSend / contentType （具体说明注释详见）</td>
+                    <td>url / obj / html / link / data / jsonp / type / async / refresh / dataType / error / success / complete / beforeSend / contentType （具体说明注释详见）</td>
                     <td>response</td>
                 </tr>
                 <tr>
                     <td>comfirm</td>
                     <td>确认框类</td>
-                    <td>msg / obj / html / type / refresh / showCancel / success（具体说明注释详见）</td>
+                    <td>msg / obj / html / link / type / refresh / showCancel / success（具体说明注释详见）</td>
                     <td>—</td>
                 </tr>
                 <tr>
@@ -218,6 +218,7 @@
         // url: '',                                            // 规定发送请求的 URL。默认是当前页面。
         // obj: '',                                            // 父元素标签类或ID、标签。
         // html: '',                                           // 所在父元素中渲染的HTML。
+        // link: '',                                           // 提交成功后跳转的链接
         // data: '',                                           // 规定要发送到服务器的数据。
         // jsonp: '',                                          // 在一个 jsonp 中重写回调函数的字符串。
         // type: 'get',                                        // 规定请求的类型（GET 或 POST）。
@@ -234,6 +235,7 @@
                 successMsg: '提交成功！',
                 errorMsg: '提交失败！',
                 url: 'upload.php',
+                link: 'https://www.baidu.com',
                 error (res){
                     console.log(res);
                 },
@@ -253,6 +255,7 @@
         // msg: '',                 // 确认框提示语
         // obj: '',                 // 父元素标签类或ID、标签。
         // html: '',                // 所在父元素中渲染的HTML。
+        // link: '',                // 提交成功后跳转的链接
         // type: 'warning',         // 提示框类型，默认警告
         // refresh: false,          // 确认后是否刷新，默认false
         // showCancel: true         // 是否显示取消按钮
@@ -261,6 +264,7 @@
             base.comfirm({
                 // refresh: true,
                 msg: '你确定删除吗？',
+                link: 'https://www.baidu.com',
                 success() {
                     console.log('delete success')
                 }
