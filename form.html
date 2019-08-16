@@ -21,7 +21,7 @@
                 <h3>典型表单</h3>
                 <p>包括各种表单项，比如输入框、选择器、开关、单选框、多选框等。</p>
             </div>
-            <div class="content">
+            <div class="content form">
                 <qx-form label-width="90px">
                     <qx-form-item label="输入框">
                         <qx-input required name="text"></qx-input>
@@ -61,7 +61,7 @@
                         <qx-radio value="nv" name="radio">女</qx-radio>
                     </qx-form-item>
                     <qx-form-item label="开关">
-                        <qx-switch name="switch"></qx-switch>
+                        <qx-switch name="switch" checked></qx-switch>
                     </qx-form-item>
                     <qx-form-item>
                         <qx-button native="submit">提交</qx-button>
@@ -255,6 +255,15 @@
         });
         $('.date2').DatePicker({
             format:'YYYY-MM-DD'
+        });
+
+        // 获取表单数据
+        $('.form button').eq(0).click(function (){
+            $('.form').getForm({
+                success: function (e){
+                    console.log(e);
+                }
+            });
         });
 
         // data

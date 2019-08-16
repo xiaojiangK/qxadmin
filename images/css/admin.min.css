@@ -2148,11 +2148,11 @@ textarea:focus{
 }
 .qx-layer{
     margin: 0;
-    top: 2.5%;
+    top: 5%;
     left: 2.5%;
     padding: 0;
     width: 95%;
-    height: 95%;
+    height: 90%;
     z-index: 9999;
     position: fixed;
     border-radius: 2px;
@@ -2302,6 +2302,7 @@ textarea:focus{
     width: 2px;
     height: 16px;
     margin: 0 10px 0 0;
+    vertical-align: middle;
     background: #FF7905;
     display: inline-block;
 }
