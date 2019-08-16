@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="images/css/iconfon.main.css" />
+    <meta name="author" content="740092856@qq.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="images/css/admin.min.css" />
+    <link rel="shortcut icon" href="https://images.lfwin.com/lfwin/images/OEM/fordar/v2_flogo.png" type="image/x-icon">
     <title>求新商户后台</title>
     <style>
         html,body{
@@ -26,7 +28,7 @@
         .login{
             left: 50%;
             top: 50%;
-            width: 462px;
+            width: 620px;
             padding: 0 79px;
             position: fixed;
             background: #fff;
@@ -209,6 +211,7 @@
     </div>
 
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="images/js/admin.min.js"></script>
     <script>
         if ($('#remember').is(':checked')) {
             $('.checkbox_inner').addClass('active');
@@ -224,12 +227,34 @@
         });
 
         $('.submit button').on('click', function (){
+            var username = $('.username').val();
+            var password = $('.password').val();
+            if (!username || username.length > 32) {
+                $(this).message({
+                    type: 'error',
+                    msg: '用户名不能为空或大于32位'
+                });
+                return;
+            }
+            if (!password) {
+                $(this).message({
+                    type: 'error',
+                    msg: '对不起，密码不能为空！'
+                });
+                return;
+            } else if (password.length < 6 || password.length > 32) {
+                $(this).message({
+                    type: 'error',
+                    msg: '对不起，密码不能小于6位或大于32位'
+                });
+                return;
+            }
             $.ajax({
                 url: '',
                 method: 'POST',
                 data: {
-                    username: $('.username').val(),
-                    password: $('.password').val()
+                    username,
+                    password
                 },
                 success: function (){
                     console.log('this is success');

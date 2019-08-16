@@ -73,12 +73,12 @@
         <div class="item">
             <div class="title">
                 <h3>表单验证</h3>
-                <p>在防止用户犯错的前提下，尽可能让用户更早地发现并纠正错误。</p>
+                <p>在防止用户犯错的前提下，尽可能让用户更早地发现并纠正错误，返回数据key默认取name值，name值必传</p>
             </div>
             <div class="content checkForm">
                 <qx-form label-width="90px">
                     <qx-form-item label="输入框" prop="input">
-                        <qx-input name="text"></qx-input>
+                        <qx-input name="username"></qx-input>
                     </qx-form-item>
                     <qx-form-item label="密码框" prop="password">
                         <qx-input type="password" name="password" show-pass></qx-input>
@@ -104,6 +104,11 @@
                             <qx-option value="龙须面"></qx-option>
                             <qx-option value="北京烤鸭"></qx-option>
                         </qx-select>
+                    </qx-form-item>
+                    <qx-form-item label="书籍" prop="cascader">
+                        <div class="cascader">
+                            <qx-cascader placeholder="请选择书籍"></qx-cascader>
+                        </div>
                     </qx-form-item>
                     <qx-form-item label="复选框" prop="checkbox">
                         <qx-checkbox-group>
@@ -252,6 +257,160 @@
             format:'YYYY-MM-DD'
         });
 
+        // data
+        var options = [
+            {
+                label: '指南',
+                children: [
+                    {
+                        label: '设计原则',
+                        children: [{
+                            label: '一致'
+                        }, {
+                            label: '反馈'
+                        }, {
+                            label: '效率'
+                        }, {
+                            label: '可控'
+                        }]
+                    },
+                    {
+                        label: '导航',
+                        children: [
+                            {
+                                label: '侧向导航'
+                            },
+                            {
+                                label: '顶部导航'
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                label: '组件',
+                children: [{
+                    label: 'Basic',
+                    children: [{
+                        label: 'Layout 布局'
+                    }, {
+                        label: 'Color 色彩'
+                    }, {
+                        label: 'Typography 字体'
+                    }, {
+                        label: 'Icon 图标'
+                    }, {
+                        label: 'Button 按钮'
+                    }]
+                }, {
+                    label: 'Form',
+                    children: [{
+                        label: 'Radio 单选框'
+                    }, {
+                        label: 'Checkbox 多选框'
+                    }, {
+                        label: 'Input 输入框'
+                    }, {
+                        label: 'InputNumber 计数器'
+                    }, {
+                        label: 'Select 选择器'
+                    }, {
+                        label: 'Cascader 级联选择器'
+                    }, {
+                        label: 'Switch 开关'
+                    }, {
+                        label: 'Slider 滑块'
+                    }, {
+                        label: 'TimePicker 时间选择器'
+                    }, {
+                        label: 'DatePicker 日期选择器'
+                    }, {
+                        label: 'DateTimePicker 日期时间选择器'
+                    }, {
+                        label: 'Upload 上传'
+                    }, {
+                        label: 'Rate 评分'
+                    }, {
+                        label: 'Form 表单'
+                    }]
+                }, {
+                    label: 'Data',
+                    children: [{
+                        label: 'Table 表格'
+                    }, {
+                        label: 'Tag 标签'
+                    }, {
+                        label: 'Progress 进度条'
+                    }, {
+                        label: 'Tree 树形控件'
+                    }, {
+                        label: 'Pagination 分页'
+                    }, {
+                        label: 'Badge 标记'
+                    }]
+                }, {
+                    label: 'Notice',
+                    children: [{
+                        label: 'Alert 警告'
+                    }, {
+                        label: 'Loading 加载'
+                    }, {
+                        label: 'Message 消息提示'
+                    }, {
+                        label: 'MessageBox 弹框'
+                    }, {
+                        label: 'Notification 通知'
+                    }]
+                }, {
+                    label: 'Navigation',
+                    children: [{
+                        label: 'NavMenu 导航菜单'
+                    }, {
+                        label: 'Tabs 标签页'
+                    }, {
+                        label: 'Breadcrumb 面包屑'
+                    }, {
+                        label: 'Dropdown 下拉菜单'
+                    }, {
+                        label: 'Steps 步骤条'
+                    }]
+                }, {
+                    label: 'Others',
+                    children: [{
+                        label: 'Dialog 对话框'
+                    }, {
+                        label: 'Tooltip 文字提示'
+                    }, {
+                        label: 'Popover 弹出框'
+                    }, {
+                        label: 'Card 卡片'
+                    }, {
+                        label: 'Carousel 走马灯'
+                    }, {
+                        label: 'Collapse 折叠面板'
+                    }]
+                }]
+            },
+            {
+                label: '资源',
+                children: [{
+                    label: 'Axure Components'
+                }, {
+                    label: 'Sketch Templates'
+                }, {
+                    label: '组件交互文档'
+                }]
+            }
+        ];
+
+        $('.cascader').cascader({
+            options: options,
+            change: function (res) {
+                console.log(res);
+            }
+        });
+
+        // 检测表单返回数据 key 取name值，因此name值必传
         const rule = {
             input: {
                 min: 5,                                        // 最小值
@@ -281,6 +440,10 @@
                 required: true,
                 message: 'select是必填项'
             },
+            cascader: {
+                required: true,
+                message: 'cascader是必填项'
+            },
             checkbox: {
                 min: 2,
                 max: 3,
@@ -295,10 +458,28 @@
 
         $('.checkForm').validate(rule);
 
+        // Base 类
+        var base = new Base();
+
         $('.submit button').on('click', function() {
             rule.type = 'submit';       // 类型
             rule.valid = function (e){  // 回调函数
                 console.log(e);
+                if (e.valid) {
+                    base.ajax({
+                        data: e.data,
+                        method: 'post',
+                        successMsg: '提交成功！',
+                        errorMsg: '提交失败！',
+                        url: 'upload.php',
+                        success (res){
+                            console.log(res);
+                        },
+                        error (res){
+                            console.log(res);
+                        }
+                    });
+                }
             };
             $('.checkForm').validate(rule);
         });
