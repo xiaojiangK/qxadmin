@@ -2286,7 +2286,7 @@ textarea:focus{
     transition: .2s all;
 }
 .qx-header{
-    margin: 0 0 20px;
+    margin: 20px;
 }
 .qx-header:after{
     clear: both;
