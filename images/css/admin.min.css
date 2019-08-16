@@ -479,6 +479,7 @@ qx-checkbox,qx-radio,qx-select,qx-switch,qx-button{
     padding: 5px 15px 0 10px;
 }
 .qx-input{
+    width: 280px;
     font-size: 14px;
     position: relative;
     display: inline-block;
@@ -556,7 +557,6 @@ textarea:focus{
     display: inline-block;
 }
 .qx-select{
-    width: 280px;
     font-size: 14px;
     max-height: 294px;
     position: relative;
@@ -798,12 +798,12 @@ textarea:focus{
 }
 .qx-button.warning{
     color: #fff;
-    background-color: #e6a23c;
-    border-color: #e6a23c;
+    background-color: #FF7D07;
+    border-color: #FF7D07;
 }
 .qx-button.warning:not(.is-disabled):hover{
-	background: #ebb563;
-	border-color: #ebb563;
+	background: #f79236;
+	border-color: #f79236;
 	color: #fff
 }
 .qx-button.success{
@@ -838,13 +838,13 @@ textarea:focus{
 }
 .qx-button.primary{
     color: #fff;
-    background-color: #FF7D07;
-    border-color: #FF7D07;
+    background-color: #1E9FFF;
+    border-color: #1E9FFF;
 }
 .qx-button.primary:not(.is-disabled):hover{
     color:#fff;
-    background:#f79236;
-    border-color:#f79236;
+    background:#55aef1;
+    border-color:#55aef1;
 }
 .qx-button:not(.is-disabled):hover {
 	color: #409eff;
@@ -910,9 +910,6 @@ textarea:focus{
 .qx-button.round{
     border-radius: 20px;
 }
-.qx-input_box{
-    width: 280px;
-}
 .qx-input_box .suffix{
     padding: 0 25px 0 15px;
 }
@@ -967,16 +964,34 @@ textarea:focus{
     border-color:#F04832;
     box-shadow: 0 0 6px 0 rgba(240, 72, 50, 0.6);
 }
+.qx-input_box.medium{
+    width: 260px;
+}
 .qx-input_box.medium input{
     height: 36px;
     line-height: 36px;
+}
+.qx-input_box.medium .qx-input_icon{
+    line-height: 36px;
+}
+.qx-input_box.small{
+    width: 240px;
 }
 .qx-input_box.small input{
     height: 32px;
     line-height: 32px;
 }
+.qx-input_box.small .qx-input_icon{
+    line-height: 32px;
+}
+.qx-input_box.mini{
+    width: 220px;
+}
 .qx-input_box.mini input{
     height: 28px;
+    line-height: 28px;
+}
+.qx-input_box.mini .qx-input_icon{
     line-height: 28px;
 }
 .pagination {
@@ -1350,7 +1365,7 @@ textarea:focus{
 .qx-form-item>.qx-form_label{
     color: #606266;
     text-align: right;
-    padding: 0 15px 0 0;
+    padding: 0 15px;
     display: table-cell;
     vertical-align: middle;
 }
@@ -2269,4 +2284,40 @@ textarea:focus{
     position: absolute;
     -webkit-transition: .2s all;
     transition: .2s all;
+}
+.qx-header{
+    margin: 0 0 20px;
+}
+.qx-header:after{
+    clear: both;
+    content: '';
+    display: block;
+}
+.qx-header .page-title{
+    color: #FF7905;
+    font-size: 18px;
+}
+.qx-header .page-title:before{
+    content: '';
+    width: 2px;
+    height: 16px;
+    margin: 0 10px 0 0;
+    background: #FF7905;
+    display: inline-block;
+}
+.qx-header .left{
+    float: left;
+    display: flex;
+    align-items: center;
+}
+.qx-header .left .qx-form{
+    display: flex;
+    margin: 0 0 0 55px;
+    align-items: center;
+}
+.qx-header .left .qx-form-item{
+    margin: 0;
+}
+.qx-header .right{
+    float: right;
 }

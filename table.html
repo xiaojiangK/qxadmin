@@ -139,12 +139,11 @@
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script src="images/js/admin.min.js"></script>
     <script>
-        var icon = "<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>";
         var data=[
-            {id:"1",img: '<img src="https://www.liankaa.com/public/img/index-pic15.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:true,control: icon},
-            {id:"2",img: '<img src="https://www.liankaa.com/public/img/index-pic15.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control: icon},
-            {id:"3",img: '<img src="https://www.liankaa.com/public/img/index-pic15.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control: icon},
-            {id:"4",img: '<img src="https://www.liankaa.com/public/img/index-pic15.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control: icon},
+            {id:"1",img: '<img src="https://www.liankaa.com/public/img/index-pic15.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:true,control:''},
+            {id:"2",img: '<img src="https://www.liankaa.com/public/img/index-pic15.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:''},
+            {id:"3",img: '<img src="https://www.liankaa.com/public/img/index-pic15.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:''},
+            {id:"4",img: '<img src="https://www.liankaa.com/public/img/index-pic15.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:''},
         ];
 
         $('#table').table({
@@ -181,7 +180,8 @@
             },{
                 title:"操作",
                 keyName:"control",
-                width: 100
+                width: 100,
+                default: "<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>"
             }],
             switch(e) {                     // 内置监听switch事件
                 console.log(e);
@@ -224,7 +224,8 @@
             },{
                 title:"操作",
                 keyName:"control",
-                width: 150
+                width: 150,
+                default: "<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>"
             }],
             event(e) {                      // 自定义事件监听
                 console.log(e);
@@ -271,7 +272,8 @@
             },{
                 title:"操作",
                 keyName:"control",
-                width: 150
+                width: 150,
+                default: "<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>"
             }],
             event(e) {                      // 自定义事件监听
                 console.log(e);

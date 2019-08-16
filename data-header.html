@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="740092856@qq.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="images/css/admin.min.css" />
+    <link rel="shortcut icon" href="https://images.lfwin.com/lfwin/images/OEM/fordar/v2_flogo.png" type="image/x-icon">
+    <title>admin-data-header</title>
+</head>
+<body>
+    <div class="demo-main">
+        <div class="admim-title">
+            <h2>data-header 表头</h2>
+            <p>数据表格表头操作：刷新、添加、删除、下拉框、输入框、按钮等等</p>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>基础用法</h3>
+            </div>
+            <div class="content">
+                <div class="qx-header">
+                    <div class="left">
+                        <div class="page-title">卡券列表</div>
+                        <qx-form>
+                            <qx-form-item label="发送类别：" prop="input">
+                                <qx-select placeholder="请选择" size="small" name="type">
+                                    <qx-option value="代金券"></qx-option>
+                                    <qx-option value="折扣券"></qx-option>
+                                </qx-select>
+                            </qx-form-item>
+                            <qx-form-item label="状态：" prop="input">
+                                <qx-select placeholder="请选择" size="small" name="status">
+                                    <qx-option value="平台券"></qx-option>
+                                    <qx-option value="微信券"></qx-option>
+                                </qx-select>
+                            </qx-form-item>
+                        </qx-form>
+                    </div>
+                    <div class="right">
+                        <qx-button type="primary" class="add" icon="icon-remove" size="small">添加</qx-button>
+                        <qx-button type="warning" class="remove" icon="icon-add" size="small">删除</qx-button>
+                        <qx-button type="warning" class="refresh" icon="icon-refresh" size="small">刷新</qx-button>
+                    </div>
+                </div>
+                <div class="qx-header">
+                    <div class="left">
+                        <div class="page-title">标签分类</div>
+                        <qx-form>
+                            <qx-form-item prop="input">
+                                <qx-input name="tags" name="keyword" placeholder="请输入标签分类名" size="small"></qx-input>
+                                <qx-button type="warning" icon="icon-seekicon" size="mini"></qx-button>
+                            </qx-form-item>
+                        </qx-form>
+                    </div>
+                    <div class="right">
+                        <qx-button type="primary" class="add" icon="icon-remove" size="small">添加</qx-button>
+                        <qx-button type="warning" class="remove" icon="icon-add" size="small">删除</qx-button>
+                        <qx-button type="warning" class="refresh" icon="icon-refresh" size="small">刷新</qx-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="images/js/admin.min.js"></script>
+    <script>
+        // Base 类
+        var base = new Base();
+        
+        var header = $('.qx-header').eq(0);
+        $(header).find('.add').on('click', function (){
+            var type = $(header).find('input[name=type]').val();
+            var status = $(header).find('input[name=status]').val();
+            if (!type) {
+                base.tips({
+                    msg: '发送类别不能为空'
+                });
+                return;
+            }
+            if (!status) {
+                base.tips({
+                    msg: '状态不能为空'
+                });
+                return;
+            }
+            base.ajax({
+                successMsg: '恭喜您，提交成功！',
+                errorMsg: '对不起，提交失败！',
+                url: 'upload.php',
+                data: {
+                    type,
+                    status
+                },
+                error (res){
+                    console.log(res);
+                },
+                success (res){
+                    console.log(res);
+                }
+            });
+        });
+        $(header).find('.remove').on('click', function (){
+            base.ajax({
+                successMsg: '恭喜您，提交成功！',
+                errorMsg: '对不起，提交失败！',
+                url: 'upload.php',
+                data: {},
+                error (res){
+                    console.log(res);
+                },
+                success (res){
+                    console.log(res);
+                }
+            });
+        });
+        $('.qx-header').find('.refresh').on('click', function (){
+            window.location.reload();
+        });
+        
+    </script>
+</body>
+</html>
