@@ -2152,7 +2152,7 @@ textarea:focus{
     left: 2.5%;
     padding: 0;
     width: 95%;
-    height: 90%;
+    height: 85%;
     z-index: 9999;
     position: fixed;
     border-radius: 2px;
@@ -2324,4 +2324,38 @@ textarea:focus{
 }
 .pages{
     margin: 30px 0;
+}
+.qx-collapse{
+    margin-bottom: 20px;;
+}
+.qx-collapse .panel{
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.qx-collapse .panel-header{
+    color: #333;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-color: #ddd;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: #f5f5f5;
+}
+.qx-collapse .panel-title{
+    font-size: 16px;
+}
+.qx-collapse .panel-collapse{
+    display: none;
+}
+.qx-collapse .panel-collapse.active{
+    display: block;
+}
+.qx-collapse .panel-body{
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
