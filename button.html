@@ -161,6 +161,43 @@
                 </tr>
             </tbody>
         </table>
+        <h2>Base Event</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>事件名称</th>
+                    <th>说明</th>
+                    <th>参数</th>
+                    <th>回调参数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ajax</td>
+                    <td>ajax 请求类；发起网络请求</td>
+                    <td>url / obj / html / data / jsonp / type / async / refresh / dataType / error / success / complete / beforeSend / contentType （具体说明注释详见）</td>
+                    <td>response</td>
+                </tr>
+                <tr>
+                    <td>comfirm</td>
+                    <td>确认框类</td>
+                    <td>msg / obj / html / type / refresh / showCancel / success（具体说明注释详见）</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>tips</td>
+                    <td>提示框类</td>
+                    <td>msg / obj / html / type （具体说明注释详见）</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>render</td>
+                    <td>HTML 渲染类</td>
+                    <td>msg / obj / html / type （具体说明注释详见）</td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
@@ -176,7 +213,22 @@
 
         // Base 类
         var base = new Base();
-        // ajax 请求类
+
+        // ajax 请求类 参数说明
+        // url: '',                                            // 规定发送请求的 URL。默认是当前页面。
+        // obj: '',                                            // 父元素标签类或ID、标签。
+        // html: '',                                           // 所在父元素中渲染的HTML。
+        // data: '',                                           // 规定要发送到服务器的数据。
+        // jsonp: '',                                          // 在一个 jsonp 中重写回调函数的字符串。
+        // type: 'get',                                        // 规定请求的类型（GET 或 POST）。
+        // async: true,                                        // 布尔值，表示请求是否异步处理。默认是 true。
+        // refresh: false,                                     // 提交成功后是否刷新
+        // dataType: '',                                       // 预期的服务器响应的数据类型。
+        // error: function() {},                               // 如果请求失败要运行的函数。
+        // success: function() {},                             // 当请求成功时运行的函数。
+        // complete: function() {},                            // 请求完成时运行的函数。
+        // beforeSend: function() {},                          // 发送请求前运行的函数。
+        // contentType: 'application/x-www-form-urlencoded'    // 发送数据到服务器时所使用的内容类型。默认是："application/x-www-form-urlencoded"。
         $('.qx-button').eq(0).on('click', function (){
             base.ajax({
                 successMsg: '提交成功！',
@@ -197,15 +249,29 @@
             });
         });
         
-        // 确认框类
+        // 确认框类参数说明
+        // msg: '',                 // 确认框提示语
+        // obj: '',                 // 父元素标签类或ID、标签。
+        // html: '',                // 所在父元素中渲染的HTML。
+        // type: 'warning',         // 提示框类型，默认警告
+        // refresh: false,          // 确认后是否刷新，默认false
+        // showCancel: true         // 是否显示取消按钮
+        // success: Function        // 点击确定成功回调函数
         $('.qx-button').eq(1).on('click', function (){
             base.comfirm({
-                refresh: true,
-                msg: '你确定删除吗？'
+                // refresh: true,
+                msg: '你确定删除吗？',
+                success() {
+                    console.log('delete success')
+                }
             });
         });
 
-        // 提示类
+        // 提示框类参数说明
+        // msg: '',                // 消息框提示语
+        // type: 'success',        // 提示框类型，默认成功
+        // obj: '',                // 父元素标签类或ID、标签。
+        // html: '',               // 所在父元素中渲染的HTML。
         $('.qx-button').eq(2).on('click', function (){
             base.tips({
                 refresh: true,
@@ -213,9 +279,14 @@
             });
         });
 
-        // 渲染类
+        // 渲染类参数说明
+        // msg: '',                // 消息框提示语
+        // type: 'success',        // 提示框类型，默认成功
+        // obj: '',                // 父元素标签类或ID、标签。
+        // html: '',               // 所在父元素中渲染的HTML。
         $('.qx-button').eq(3).on('click', function (){
             base.render({
+                msg: '渲染成功',
                 obj: '.demo',
                 html: `
                     <div class="admim-title">
