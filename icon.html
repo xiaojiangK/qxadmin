@@ -712,11 +712,7 @@
     <script>
         // 删除父元素中layer弹层
         $('.method button').eq(1).on('click', function (){
-            var layer = $(top.window.document.getElementsByClassName('qx-layer'));
-            $(layer).animate({'opacity': 0}).css({
-                'transform': 'scale(.2)',
-                'visibility': 'hidden'
-            }).siblings('.mask').remove();
+            $(this).closeLayer();
         });
     </script>
 </body>
