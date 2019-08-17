@@ -2359,3 +2359,20 @@ textarea:focus{
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 }
+.qx-table.collapse td.none{
+    display: none;
+}
+.qx-table.collapse .icon-icondown{
+    -webkit-transition: .2s all;
+    -ms-transition: .2s all;
+    transition: .2s all;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    display: inline-block;
+}
+.qx-table.collapse .icon-icondown.active{
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+}

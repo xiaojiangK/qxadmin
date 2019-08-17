@@ -41,6 +41,31 @@
                 <table id="table3" class="qx-table"></table>
             </div>
         </div>
+        <div class="item">
+            <div class="title">
+                <h3>带折叠表格</h3>
+            </div>
+            <div class="content">
+                <div class="qx-header">
+                    <div class="left">
+                        <div class="page-title">标签分类</div>
+                        <qx-form>
+                            <qx-form-item prop="input">
+                                <qx-input name="tags" name="keyword" placeholder="请输入标签分类名" size="small"></qx-input>
+                                <qx-button type="warning" icon="icon-seekicon" size="mini"></qx-button>
+                            </qx-form-item>
+                        </qx-form>
+                    </div>
+                    <div class="right">
+                        <qx-button type="primary" class="remove" icon="icon-add" size="small">全选</qx-button>
+                        <qx-button type="warning" class="remove" icon="icon-remove" size="small">批量删除</qx-button>
+                        <qx-button type="warning" class="add" icon="icon-retract" size="small">全部折叠</qx-button>
+                        <qx-button type="warning" class="refresh" icon="icon-fileopen" size="small">全部展开</qx-button>
+                    </div>
+                </div>
+                <table id="table4" class="qx-table"></table>
+            </div>
+        </div>
     </div>
     
     <div class="attributes">
@@ -146,107 +171,169 @@
             {id:"4",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:[{id: 1001, type: '超级管理员'}]},
         ];
 
-        $('#table').table({
-            // evenRowClass:'qx-evenRow',//表格偶数行样式
-            // oddRowClass:'qx-oddRow',//表格奇数行样式
-            curRowClass:'qx-curRow',//表格hover样式
-            overflowHeight: "250px",//出现滚动条的高度
-            titles:[{
-                title: "ID",
-                keyName: "id",
-                width: 80,
-                checkBox: false             // checkbox 复选框
-            },{
-                title:"头像",
-                keyName:"img"
-            },
-            {
-                title:"登录名",
-                keyName:"name"
-            },{
-                title:"邮箱",
-                keyName:"email"
-            },{
-                title:"角色",
-                keyName:"role"
-            },{
-                title:"加入时间",
-                keyName:"add_time"
-            },{
-                title:"状态",
-                keyName:"status",
-                switch: true,               // switch 开关
-                width: 100
-            },{
-                title:"操作",                // 标题
-                keyName:"control",          // 一维数组字段
-                width: 100,                 // TD宽度
-                keysName:"type",            // 二维数组字段
-                default: ""   // 默认值
-            }],
-            switch(e) {                     // 内置监听switch事件
-                console.log(e);
-            },
-            event(e) {                      // 自定义事件监听
-                console.log(e);
-            },
-            data
-        });
+        var data2=[
+            {id:"1",pid:"-1",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:true,control:null},
+            {id:"2",pid:"1",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
+            {id:"3",pid:"1",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
+            {id:"4",pid:"-1",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
+            {id:"4",pid:"4",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
+            {id:"4",pid:"4",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
+        ];
+    
+        // $('#table').table({
+        //     // evenRowClass:'qx-evenRow',//表格偶数行样式
+        //     // oddRowClass:'qx-oddRow',//表格奇数行样式
+        //     curRowClass:'qx-curRow',//表格hover样式
+        //     overflowHeight: "250px",//出现滚动条的高度
+        //     titles:[{
+        //         title: "ID",
+        //         keyName: "id",
+        //         width: 80,
+        //         checkBox: false             // checkbox 复选框
+        //     },{
+        //         title:"头像",
+        //         keyName:"img"
+        //     },
+        //     {
+        //         title:"登录名",
+        //         keyName:"name"
+        //     },{
+        //         title:"邮箱",
+        //         keyName:"email"
+        //     },{
+        //         title:"角色",
+        //         keyName:"role"
+        //     },{
+        //         title:"加入时间",
+        //         keyName:"add_time"
+        //     },{
+        //         title:"状态",
+        //         keyName:"status",
+        //         switch: true,               // switch 开关
+        //         width: 100
+        //     },{
+        //         title:"操作",                // 标题
+        //         keyName:"control",          // 一维数组字段
+        //         width: 100,                 // TD宽度
+        //         keysName:"type",            // 二维数组字段
+        //         default: ""   // 默认值
+        //     }],
+        //     switch(e) {                     // 内置监听switch事件
+        //         console.log(e);
+        //     },
+        //     event(e) {                      // 自定义事件监听
+        //         console.log(e);
+        //     },
+        //     data
+        // });
 
-        // 带斑马纹
-        $('#table2').table({
-            evenRowClass:'qx-evenRow',//表格偶数行样式
-            oddRowClass:'qx-oddRow',//表格奇数行样式
-            curRowClass:'qx-curRow',//表格hover样式
-            overflowHeight: "260px",//出现滚动条的高度
-            titles:[{
-                title: "id",
-                keyName: "id",
-                width: 80,
-                checkBox: true
-            },
-            {
-                title:"登录名",
-                keyName:"name"
-            },{
-                title:"邮箱",
-                keyName:"email"
-            },{
-                title:"角色",
-                keyName:"role"
-            },{
-                title:"加入时间",
-                keyName:"add_time"
-            },{
-                title:"状态",
-                keyName:"status",
-                switch: true,
-                width: 150
-            },{
-                title:"操作",
-                keyName:"control",
-                width: 150,
-                default: "<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>"
-            }],
-            event(e) {                      // 自定义事件监听
-                console.log(e);
-            },
-            checked(e) {                    // 内置监听checkebox事件
-                console.log(e);
-            },
-            switch(e) {
-                console.log(e);
-            },
-            data
-        });
-        
-        // 带边框
-        $('#table3').table({
+        // // 带斑马纹
+        // $('#table2').table({
+        //     evenRowClass:'qx-evenRow',//表格偶数行样式
+        //     oddRowClass:'qx-oddRow',//表格奇数行样式
+        //     curRowClass:'qx-curRow',//表格hover样式
+        //     overflowHeight: "260px",//出现滚动条的高度
+        //     titles:[{
+        //         title: "id",
+        //         keyName: "id",
+        //         width: 80,
+        //         checkBox: true
+        //     },
+        //     {
+        //         title:"登录名",
+        //         keyName:"name"
+        //     },{
+        //         title:"邮箱",
+        //         keyName:"email"
+        //     },{
+        //         title:"角色",
+        //         keyName:"role"
+        //     },{
+        //         title:"加入时间",
+        //         keyName:"add_time"
+        //     },{
+        //         title:"状态",
+        //         keyName:"status",
+        //         switch: true,
+        //         width: 150
+        //     },{
+        //         title:"操作",
+        //         keyName:"control",
+        //         width: 150,
+        //         default: "<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>"
+        //     }],
+        //     event(e) {                      // 自定义事件监听
+        //         console.log(e);
+        //     },
+        //     checked(e) {                    // 内置监听checkebox事件
+        //         console.log(e);
+        //     },
+        //     switch(e) {
+        //         console.log(e);
+        //     },
+        //     data
+        // });
+
+        // // 带边框
+        // $('#table3').table({
+        //     border: 'qx-border',//表格带边框样式
+        //     evenRowClass:'qx-evenRow',//表格偶数行样式
+        //     oddRowClass:'qx-oddRow',//表格奇数行样式
+        //     curRowClass:'qx-curRow',//表格hover样式
+        //     overflowHeight: "260px",//出现滚动条的高度
+        //     titles:[{
+        //         title: "id",
+        //         keyName: "id",
+        //         width: 80,
+        //         checkBox: true
+        //     },
+        //     {
+        //         title:"登录名",
+        //         keyName:"name"
+        //     },{
+        //         title:"邮箱",
+        //         keyName:"email"
+        //     },{
+        //         title:"角色",
+        //         keyName:"role"
+        //     },{
+        //         title:"加入时间",
+        //         keyName:"add_time"
+        //     },{
+        //         title:"状态",
+        //         keyName:"status",
+        //         switch: true,
+        //         width: 150
+        //     },{
+        //         title:"操作",
+        //         keyName:"control",
+        //         width: 150,
+        //         default: "<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>"
+        //     }],
+        //     event(e) {                      // 自定义事件监听
+        //         console.log(e);
+        //     },
+        //     checked(e) {                    // 内置监听checkebox事件
+        //         console.log(e);
+        //     },
+        //     switch(e) {
+        //         console.log(e);
+        //     },
+        //     data
+        // });
+
+        // 保存已选数据
+        var selected = [];
+
+        // 带折叠
+        $('#table4').table({
             border: 'qx-border',//表格带边框样式
             evenRowClass:'qx-evenRow',//表格偶数行样式
             oddRowClass:'qx-oddRow',//表格奇数行样式
             curRowClass:'qx-curRow',//表格hover样式
-            overflowHeight: "260px",//出现滚动条的高度
+            overflowHeight: "560px",//出现滚动条的高度
+            collapse: true,         //是否支持折叠，默认false，对应数据pid（父级ID，一级pid则为-1）
+            // defaultClose: true,    //是否默认折叠，默认false
             titles:[{
                 title: "id",
                 keyName: "id",
@@ -255,7 +342,7 @@
             },
             {
                 title:"登录名",
-                keyName:"name"
+                keyName:"name",
             },{
                 title:"邮箱",
                 keyName:"email"
@@ -274,18 +361,58 @@
                 title:"操作",
                 keyName:"control",
                 width: 150,
+                keysName:"type",            // 二维数组字段
                 default: "<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>"
             }],
-            event(e) {                      // 自定义事件监听
+            event(e) {
                 console.log(e);
             },
-            checked(e) {                    // 内置监听checkebox事件
-                console.log(e);
+            checked(e) {
+                // 清空数据
+                selected = [];
+                // 已选元素，根据实际情况push字段
+                for (let i of e) {
+                    selected.push(i.data.id);
+                }
             },
             switch(e) {
                 console.log(e);
             },
-            data
+            data: data2
+        });
+        
+        var base = new Base();
+
+        // 全选操作
+        $('.qx-header .right button').eq(0).on('click', function (){
+            $('#table4 input[name=AllChecks]').trigger("click");
+        });
+        // 批量删除
+        $('.qx-header .right button').eq(1).on('click', function (){
+            console.log(selected);          // 已选数据
+            base.ajax({
+                type: 'POST',
+                data: {
+                    selected
+                },
+                successMsg: '批量删除成功！',
+                errorMsg: '批量删除失败！',
+                url: 'upload.php',
+                error (res){
+                    console.log(res);
+                },
+                success (res){
+                    console.log(res);
+                }
+            });
+        });
+        // 全部折叠
+        $('.qx-header .right button').eq(2).on('click', function (){
+            $('#table4').collapseAll();
+        });
+        // 全部展开
+        $('.qx-header .right button').eq(3).on('click', function (){
+            $('#table4').expandAll();
         });
     </script>
 </body>
