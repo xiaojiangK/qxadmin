@@ -2311,6 +2311,9 @@ textarea:focus{
     display: flex;
     align-items: center;
 }
+.qx-header .left .qx-button{
+    vertical-align: middle;
+}
 .qx-header .left .qx-form{
     display: flex;
     margin: 0 0 0 55px;
