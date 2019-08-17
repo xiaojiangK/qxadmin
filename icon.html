@@ -25,6 +25,7 @@
                 <i class="iconfont icon-share"></i>
                 <i class="iconfont icon-remove"></i>
                 <qx-button type="primary" icon="icon-seekicon">搜索</qx-button>
+                <qx-button type="primary" icon="icon-remove">关闭父元素Layer</qx-button>
             </div>
         </div>
         <div class="item">
@@ -708,4 +709,14 @@
 
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script src="images/js/admin.min.js"></script>
+    <script>
+        // 删除父元素中layer弹层
+        $('.method button').eq(1).on('click', function (){
+            var layer = $(top.window.document.getElementsByClassName('qx-layer'));
+            $(layer).animate({'opacity': 0}).css({
+                'transform': 'scale(.2)',
+                'visibility': 'hidden'
+            }).siblings('.mask').remove();
+        });
+    </script>
 </body>
