@@ -565,6 +565,14 @@ textarea:focus{
 .qx-select>.qx-input{
     display: block;
 }
+.qx-select>.qx-input>.iconfont{
+    top: 50%;
+    left: 15px;
+    position: absolute;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
 .qx-select .qx-input_icon{
     color: #c0c4cc;
     cursor: pointer;
@@ -682,12 +690,12 @@ textarea:focus{
 .qx-select_list .qx-select_item.active{
     background-color: rgba(255, 121, 5, .2);
 }
-.qx-select_list .qx-select_item .iconfont{
+.qx-select_list .qx-select_item .hook{
     float: right;
     display: none;
     color: #c0c4cc;
 }
-.qx-select_list .qx-select_item.active .iconfont{
+.qx-select_list .qx-select_item.active .hook{
     display: block;
 }
 .other-page .content{
@@ -700,6 +708,15 @@ textarea:focus{
     text-align: center;
     padding: 0 0 10px;
     font-size: 14px;
+}
+.qx-select.icon .qx-select_item{
+    width: 20%;
+    float: left;
+    margin: 0 0 5px;
+    overflow: inherit;
+}
+.qx-select.icon .qx-select_item i{
+    font-size: 16px;
 }
 .qx-switch{
     margin: 0 10px;
