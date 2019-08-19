@@ -2296,7 +2296,8 @@ textarea:focus{
     right: 0;
     bottom: 0;
     left: 220px;
-    z-index: 1;
+    z-index: 99;
+    padding: 0 0 100px;
     overflow: hidden;
     position: absolute;
     -webkit-transition: .2s all;
@@ -2427,8 +2428,15 @@ textarea:focus{
     margin: 2px 0 0;
 }
 .qx-copyright{
-    margin: 40px 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 99;
+    padding: 10px 0;
+    background: #fff;
+    position: absolute;
     text-align: center;
+    border-top: 1px solid #ccc;
 }
 .qx-copyright p{
     color: #666;
