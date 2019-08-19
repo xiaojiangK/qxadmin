@@ -102,14 +102,14 @@
                     <td>—</td>
                 </tr>
                 <tr>
-                    <td>inputType</td>
+                    <td>type</td>
                     <td>输入框的类型</td>
                     <td>string</td>
                     <td>—</td>
                     <td>text</td>
                 </tr>
                 <tr>
-                    <td>inputValue</td>
+                    <td>value</td>
                     <td>输入框的初始文本</td>
                     <td>string</td>
                     <td>—</td>
@@ -242,11 +242,12 @@
 
             $('.submit-box button').on('click', function (){
                 $(this).messageBox({
+                    value: 'qq@qq.com',
                     showInput: true,
                     showCancelBtn: true,
                     message: '这是我的邮箱，请惠存！',
                     placeholder: '请输入邮箱',
-                    inputType: 'email',
+                    type: 'email',
                     maxLength: 18,
                     minLength: 8,
                     confirm: function (){
