@@ -2396,3 +2396,44 @@ textarea:focus{
     -ms-transform: rotate(0);
     transform: rotate(0);
 }
+.qx-alert{
+    width: 50%;
+    opacity: 1;
+    display: flex;
+    min-width: 350px;
+    user-select: none;
+    color: #e6a23c;
+    padding: 8px 16px;
+    margin: 20% auto 0;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #fdf6ec;
+}
+.qx-alert i{
+    font-size: 28px;
+}
+.qx-alert .desc{
+    padding: 0 12px; 
+    display: table-cell;
+}
+.qx-alert .desc span{
+    font-size: 13px;
+}
+.qx-alert .desc p{
+    font-size: 12px;
+    margin: 2px 0 0;
+}
+.qx-copyright{
+    margin: 40px 0;
+    text-align: center;
+}
+.qx-copyright p{
+    color: #666;
+    line-height: 30px;
+}
+.qx-copyright p:last-child{
+    color: #999;
+}

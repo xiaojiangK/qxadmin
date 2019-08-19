@@ -720,7 +720,9 @@
     <script>
         // 删除父元素中layer弹层
         $('.method button').eq(1).on('click', function (){
-            $(this).closeLayer();
+            $(this).closeLayer({
+                refresh: true
+            });
         });
     </script>
 </body>

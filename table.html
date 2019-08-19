@@ -369,6 +369,17 @@
                 default: "<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>"
             }],
             event(e) {
+                // 成功回调封装
+                base.success({
+                    code: 100000,            // 请求状态
+                    msg: '修改成功',         // 提示消息 
+                    // closeLayer: true,       // 关闭layer弹窗（默认: false）
+                    // link: '/',              // 跳转链接
+                    // refresh: true,          // 是否刷新（默认: false）
+                    remove: true,           // 是否删除tr（默认: false）
+                    type: 'success',        // 提示类型（默认: success）
+                    ele: e.tr               // 当前tr
+                });
                 console.log(e);
             },
             checked(e) {
