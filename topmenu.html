@@ -110,6 +110,10 @@
                         type: 'warning',
                         message: '退出成功',
                         confirm: function (){
+                            // 清楚Tabs缓存
+                            $(this).clearStorage({
+                                key: 'tagList'
+                            });
                             console.log('confirm');
                         }
                     });

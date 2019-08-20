@@ -227,6 +227,17 @@
         });
 
         $('.submit button').on('click', function (){
+            submit();
+        });
+
+        // 回车键登录
+        $(document).keyup(function(event){
+            if(event.keyCode == 13){
+                submit();
+            }
+        });
+
+        function submit() {
             var base = new Base();
             var username = $('.username').val();
             var password = $('.password').val();
@@ -268,7 +279,7 @@
                     console.log(res);
                 }
             });
-        });
+        }
     </script>
 </body>
 </html>

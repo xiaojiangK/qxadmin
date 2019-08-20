@@ -329,5 +329,38 @@
     </div>
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script src="images/js/admin.min.js"></script>
+    <script>
+        // 监听右侧非下拉菜单事件
+        $('.qx-top .nav-item:not(".toggle")').on('click', function (){
+            console.log('this is nav-item');
+        });
+
+        // 监听右侧下拉菜单事件
+        $('.qx-top .nav-child dd').each(function (index){
+            $(this).on('click', function (){
+                if (index == 0) {           // 修改密码
+                    $(this).layer({
+                        area: [50, 50],
+                        content: './icon.html',     // 修改密码路径
+                        close: function (){
+                            console.log('this is close');
+                        }
+                    });
+                } else if (index == 1) {    // 退出
+                    $(this).messageBox({
+                        type: 'warning',
+                        message: '退出成功',
+                        confirm: function (){
+                            // 清楚Tabs缓存
+                            $(this).clearStorage({
+                                key: 'tagList'
+                            });
+                            console.log('confirm');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

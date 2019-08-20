@@ -2432,7 +2432,8 @@ textarea:focus{
     bottom: 0;
     width: 100%;
     z-index: 99;
-    padding: 10px 0;
+    padding: 8px 0;
+    font-size: 13px;
     background: #fff;
     position: absolute;
     text-align: center;
@@ -2440,7 +2441,7 @@ textarea:focus{
 }
 .qx-copyright p{
     color: #666;
-    line-height: 30px;
+    line-height: 20px;
 }
 .qx-copyright p:last-child{
     color: #999;
