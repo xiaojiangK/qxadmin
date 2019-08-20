@@ -517,6 +517,7 @@ input:input-placeholder, textarea:input-placeholder{
     width: 100%;
 }
 .qx-textarea{
+    width: auto;
     font-size: 14px;
     position: relative;
     display: inline-block;
