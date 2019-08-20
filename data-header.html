@@ -25,13 +25,13 @@
                         <div class="page-title">卡券列表</div>
                         <qx-form>
                             <qx-form-item label="发送类别：" prop="input">
-                                <qx-select placeholder="请选择" size="small" name="type">
+                                <qx-select placeholder="请选择" size="mini" name="type">
                                     <qx-option label="代金券" value="0"></qx-option>
                                     <qx-option label="折扣券" value="1"></qx-option>
                                 </qx-select>
                             </qx-form-item>
                             <qx-form-item label="状态：" prop="input">
-                                <qx-select placeholder="请选择" size="small" name="status">
+                                <qx-select placeholder="请选择" size="mini" name="status">
                                     <qx-option label="平台券" value="0"></qx-option>
                                     <qx-option label="微信券" value="1"></qx-option>
                                 </qx-select>
@@ -39,9 +39,9 @@
                         </qx-form>
                     </div>
                     <div class="right">
-                        <qx-button type="primary" class="add" icon="icon-remove" size="small">添加</qx-button>
-                        <qx-button type="warning" class="remove" icon="icon-add" size="small">删除</qx-button>
-                        <qx-button type="warning" class="refresh" icon="icon-refresh" size="small">刷新</qx-button>
+                        <qx-button type="primary" class="add" icon="icon-remove" size="mini">添加</qx-button>
+                        <qx-button type="warning" class="remove" icon="icon-add" size="mini">删除</qx-button>
+                        <qx-button type="warning" class="refresh" icon="icon-refresh" size="mini">刷新</qx-button>
                     </div>
                 </div>
                 <div class="qx-header">
@@ -49,15 +49,15 @@
                         <div class="page-title">标签分类</div>
                         <qx-form>
                             <qx-form-item prop="input">
-                                <qx-input name="tags" name="keyword" placeholder="请输入标签分类名" size="small"></qx-input>
+                                <qx-input name="tags" name="keyword" placeholder="请输入标签分类名" size="mini"></qx-input>
                                 <qx-button type="warning" icon="icon-seekicon" size="mini"></qx-button>
                             </qx-form-item>
                         </qx-form>
                     </div>
                     <div class="right">
-                        <qx-button type="primary" class="add" icon="icon-remove" size="small">添加</qx-button>
-                        <qx-button type="warning" class="remove" icon="icon-add" size="small">删除</qx-button>
-                        <qx-button type="warning" class="refresh" icon="icon-refresh" size="small">刷新</qx-button>
+                        <qx-button type="primary" class="add" icon="icon-remove" size="mini">添加</qx-button>
+                        <qx-button type="warning" class="remove" icon="icon-add" size="mini">删除</qx-button>
+                        <qx-button type="warning" class="refresh" icon="icon-refresh" size="mini">刷新</qx-button>
                     </div>
                 </div>
             </div>
@@ -71,6 +71,7 @@
         var base = new Base();
         
         var header = $('.qx-header').eq(0);
+        var header2 = $('.qx-header').eq(1);
         $(header).find('.add').on('click', function (){
             var type = $(header).find('input[name=type]').val();
             var status = $(header).find('input[name=status]').val();
@@ -120,6 +121,24 @@
         });
         $('.qx-header').find('.refresh').on('click', function (){
             window.location.reload();
+        });
+
+        // 搜索
+        $(header2).find('.left button').on('click', function (){
+            var key = $(this).siblings('.qx-input').find('input').val();
+            base.ajax({
+                successMsg: '恭喜您，搜索成功！',
+                url: 'upload.php',
+                data: {
+                    key
+                },
+                error (res){
+                    console.log(res);
+                },
+                success (res){
+                    console.log(res);
+                }
+            });
         });
         
     </script>

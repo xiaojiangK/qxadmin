@@ -784,6 +784,7 @@ textarea:focus{
     cursor: not-allowed;
 }
 .qx-button{
+    height: 40px;
     display: inline-block;
     line-height: 1;
     white-space: nowrap;
@@ -800,7 +801,7 @@ textarea:focus{
     font-weight: 500;
     -moz-user-select: none;
     -webkit-user-select: none;
-    padding: 12px 20px;
+    padding: 0 20px;
     font-size: 14px;
     border-radius: 4px;
     position: relative;
@@ -911,24 +912,27 @@ textarea:focus{
     pointer-events: none;
 }
 .qx-button.medium{
-    padding: 10px 20px !important;
+    height: 36px;
     font-size: 14px;
     border-radius: 4px;
+    padding: 0 15px !important;
 }
 .qx-button.small{
-    padding: 9px 15px !important;
+    height: 32px;
     font-size: 12px;
     border-radius: 3px;
+    padding: 0 12px !important;
 }
 .qx-button.mini{
-    padding: 7px 15px !important;
+    height: 28px;
     font-size: 12px;
     border-radius: 3px;
+    padding: 0 10px !important;
 }
 .qx-button.round{
     border-radius: 20px;
 }
-.qx-input_box .suffix{
+.qx-input .suffix{
     padding: 0 25px 0 15px;
 }
 .qx-input.is-disabled input{
@@ -962,7 +966,7 @@ textarea:focus{
 .qx-input-suffix .icon-closes{
     opacity: 0;
 }
-.qx-input_box:hover .icon-closes{
+.qx-input:hover .icon-closes{
     opacity: 1;
 }
 .qx-input_count{
@@ -982,34 +986,36 @@ textarea:focus{
     border-color:#F04832;
     box-shadow: 0 0 6px 0 rgba(240, 72, 50, 0.6);
 }
-.qx-input_box.medium{
+.qx-input.medium{
     width: 250px;
 }
-.qx-input_box.medium input{
+.qx-input.medium input{
     height: 36px;
     line-height: 36px;
 }
-.qx-input_box.medium .qx-input_icon{
+.qx-input.medium .qx-input_icon{
     line-height: 36px;
 }
-.qx-input_box.small{
+.qx-input.small{
     width: 220px;
 }
-.qx-input_box.small input{
+.qx-input.small input{
     height: 32px;
+    font-size: 13px;
     line-height: 32px;
 }
-.qx-input_box.small .qx-input_icon{
+.qx-input.small .qx-input_icon{
     line-height: 32px;
 }
-.qx-input_box.mini{
+.qx-input.mini{
     width: 190px;
 }
-.qx-input_box.mini input{
+.qx-input.mini input{
     height: 28px;
+    font-size: 12px;
     line-height: 28px;
 }
-.qx-input_box.mini .qx-input_icon{
+.qx-input.mini .qx-input_icon{
     line-height: 28px;
 }
 .pagination {
@@ -2330,8 +2336,18 @@ textarea:focus{
     display: flex;
     align-items: center;
 }
+.qx-header .left .qx-input{
+    float: left;
+}
+.qx-header .left .qx-input input{
+    float: left;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
 .qx-header .left .qx-button{
-    vertical-align: middle;
+    float: left;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 .qx-header .left .qx-form{
     display: flex;
