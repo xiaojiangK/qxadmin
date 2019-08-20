@@ -982,7 +982,7 @@ textarea:focus{
     box-shadow: 0 0 6px 0 rgba(240, 72, 50, 0.6);
 }
 .qx-input_box.medium{
-    width: 260px;
+    width: 250px;
 }
 .qx-input_box.medium input{
     height: 36px;
@@ -992,7 +992,7 @@ textarea:focus{
     line-height: 36px;
 }
 .qx-input_box.small{
-    width: 240px;
+    width: 220px;
 }
 .qx-input_box.small input{
     height: 32px;
@@ -1002,7 +1002,7 @@ textarea:focus{
     line-height: 32px;
 }
 .qx-input_box.mini{
-    width: 220px;
+    width: 190px;
 }
 .qx-input_box.mini input{
     height: 28px;
