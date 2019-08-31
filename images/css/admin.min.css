@@ -1483,6 +1483,11 @@ textarea:focus{
 .qx-table td img{
     width: 50px;
 }
+.qx-table td.disabled{
+    opacity: .6;
+    pointer-events: none;
+    -ms-pointer-events: none; 
+}
 .qx-table .checkboxs{
     width: 14px;
     height: 14px;

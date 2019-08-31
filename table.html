@@ -166,18 +166,18 @@
     <script>
         // checked=1 默认选中
         var data=[
-            {id:"1",checked: '1',img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:true,control:[{id: 1001, type: '超级管理员'}]},
+            {id:"1",disabled: true, checked: '1',img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:true,control:[{id: 1001, type: '超级管理员'}]},
             {id:"2",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:[{id: 1001, type: '超级管理员'}]},
-            {id:"3",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:[{id: 1001, type: '超级管理员'}]},
-            {id:"4",checked: '1',img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:[{id: 1001, type: '超级管理员'}]},
+            {id:"3",disabled: true, img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:[{id: 1001, type: '超级管理员'}]},
+            {id:"4", checked: '1',img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:[{id: 1001, type: '超级管理员'}]},
         ];
 
         var data2=[
-            {id:"1",pid:"0",checked: '1',img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"1hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:true,control:null},
+            {id:"1",disabled: true,pid:"0",checked: '1',img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"1hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:true,control:null},
             {id:"2",pid:"1",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"2hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
             {id:"3",pid:"1",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"3hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
-            {id:"4",pid:"1",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"4hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
-            {id:"5",pid:"0",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"5hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
+            {id:"4",disabled: true,pid:"1",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"4hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
+            {id:"5",disabled: true,pid:"0",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"5hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
             {id:"6",pid:"5",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"6hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
             {id:"7",pid:"5",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null}
         ];
@@ -210,14 +210,16 @@
                 keyName:"add_time"
             },{
                 title:"状态",
-                keyName:"status",
+                keyName: "status",
                 switch: true,               // switch 开关
+                disabled: "disabled",       // disabled 禁用字段
                 width: 100
             },{
                 title:"操作",                // 标题
                 keyName:"control",          // 一维数组字段
                 width: 100,                 // TD宽度
                 keysName:"type",            // 二维数组字段
+                disabled: "disabled",       // disabled 禁用字段
                 default: ""   // 默认值
             }],
             switch(e) {                     // 内置监听switch事件
@@ -366,6 +368,7 @@
                 keyName:"control",
                 width: 150,
                 keysName:"type",            // 二维数组字段
+                disabled: "disabled",       // disabled 禁用字段
                 default: "<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>"
             }],
             event(e) {
