@@ -2183,6 +2183,7 @@ textarea:focus{
     width: 95%;
     height: 85%;
     z-index: 9999;
+    max-width: 100%;
     position: fixed;
     border-radius: 2px;
     pointer-events: auto;
@@ -2234,6 +2235,7 @@ textarea:focus{
     color: #6A6A74;
 }
 .qx-layer .qx-layer-content{
+    height: calc(100% - 42px);
     position: relative;
     overflow: hidden;
 }
@@ -2241,6 +2243,16 @@ textarea:focus{
     display: block;
     height: 100%;
     width: 100%;
+}
+.qx-layer .resize{
+    right: 0;
+    bottom: 0;
+    width: 11px;
+    height: 11px;
+    z-index: 99;
+    cursor: nw-resize;
+    background: url(../icon-drag.gif) right bottom no-repeat;
+    position: absolute;
 }
 .cascader-menus{
     display: none;
