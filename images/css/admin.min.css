@@ -2254,7 +2254,7 @@ textarea:focus{
     background: url(../icon-drag.gif) right bottom no-repeat;
     position: absolute;
 }
-.cascader-menus{
+.cascader-menu{
     display: none;
     z-index: 999;
     margin: 12px 0;
@@ -2268,7 +2268,7 @@ textarea:focus{
     display: flex;
     font-size: 14px;
 }
-.cascader-menus .menus{
+.cascader-menu .menus{
     height: 205px;
     min-width: 180px;
     overflow-y: auto;
@@ -2277,7 +2277,7 @@ textarea:focus{
     box-sizing: border-box;
     border-right: 1px solid #e4e7ed;
 }
-.cascader-menus .menus li{
+.cascader-menu .menus li{
     position: relative;
     display: flex;
     height: 34px;
@@ -2289,30 +2289,30 @@ textarea:focus{
     align-items: center;
     padding: 0 30px 0 20px;
 }
-.cascader-menus .menus li:hover{
+.cascader-menu .menus li:hover{
     background: #FFE4CD;
 }
-.cascader-menus .menus li:not(.is-disabled){
+.cascader-menu .menus li:not(.is-disabled){
     cursor: pointer;
 }
-.cascader-menus .menus li span{
+.cascader-menu .menus li span{
     flex: 1;
     padding: 0 10px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.cascader-menus .menus li i{
+.cascader-menu .menus li i{
     position: absolute;
     color: #606266;
     font-size: 14px;
     right: 10px;
 }
-.cascader-menus .menus li.active span{
+.cascader-menu .menus li.active span{
     color: #FF7905;
     font-weight: 700;
 }
-.cascader-menus .menus li.active i{
+.cascader-menu .menus li.active i{
     color: #FF7905;
 }
 #page-container{
