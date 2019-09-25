@@ -172,14 +172,21 @@
             {id:"4", checked: '1',img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:[{id: 1001, type: '超级管理员'}]},
         ];
 
+        /**
+         * pid: 为零一级；否则二级/三级
+         * cid: 一级分类ID并且有三级（子级）
+        */
+        
         var data2=[
             {id:"1",disabled: true,pid:"0",checked: '1',img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"1hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:true,control:null},
             {id:"2",pid:"1",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"2hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
             {id:"3",pid:"1",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"3hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
             {id:"4",pid:"1",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"4hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
             {id:"5",disabled: true,pid:"0",checked: '1',img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"5hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:true,control:null},
-            {id:"6",pid:"5",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"6hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
-            {id:"7",pid:"5",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null}
+            {id:"6",pid:"5",cid:"5",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"6hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
+            {id:"8",pid:"6",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"8hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
+            {id:"7",pid:"5",cid:"5",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
+            {id:"9",pid:"7",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"9hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
         ];
 
         $('#table').table({
