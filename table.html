@@ -178,15 +178,15 @@
         */
         
         var data2=[
-            {id:"1",disabled: true,pid:"0",checked: '1',img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"1hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:true,control:null},
-            {id:"2",pid:"1",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"2hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
-            {id:"3",pid:"1",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"3hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
-            {id:"4",pid:"1",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"4hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
-            {id:"5",disabled: true,pid:"0",checked: '1',img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"5hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:true,control:null},
-            {id:"6",pid:"5",cid:"5",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"6hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
-            {id:"8",pid:"6",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"8hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
-            {id:"7",pid:"5",cid:"5",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
-            {id:"9",pid:"7",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"9hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,control:null},
+            {id:"1",disabled: true,disabled2: true,pid:"0",checked: '1',img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"1hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:true,apply:true,control:"<i data-event='edit' class='iconfont icon-edits disabled'></i> <i data-event='remove' class='iconfont icon-remove'></i>"},
+            {id:"2",pid:"1",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"2hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,apply:false,control:"<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>"},
+            {id:"3",pid:"1",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"3hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,apply:false,control:"<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>"},
+            {id:"4",pid:"1",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"4hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,apply:false,control:"<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>"},
+            {id:"5",disabled: true,pid:"0",checked: '1',img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"5hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:true,apply:true,control:"<i data-event='edit' class='iconfont icon-edits disabled'></i> <i data-event='remove' class='iconfont icon-remove'></i>"},
+            {id:"6",pid:"5",cid:"5",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"6hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,apply:false,control:"<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>"},
+            {id:"8",pid:"6",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"8hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,apply:false,control:"<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>"},
+            {id:"7",pid:"5",cid:"5",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"7hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,apply:false,control:"<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>"},
+            {id:"9",pid:"7",img: '<img src="https://www.baidu.com/img/bd_logo1.png" />',name:"9hit",email:"G2@1235.cc",role:"信息部",add_time:"2019-05-06 10:39:18",status:false,apply:false,control:"<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>"},
         ];
 
         $('#table').table({
@@ -369,14 +369,20 @@
                 title:"状态",
                 keyName:"status",
                 switch: true,
-                width: 150
+                width: 150,
+                disabled: "disabled",       // disabled 禁用字段
+            },{
+                title:"审核",
+                keyName:"apply",
+                switch: true,
+                width: 150,
+                disabled: "disabled2",       // disabled 禁用字段
             },{
                 title:"操作",
                 keyName:"control",
                 width: 150,
-                keysName:"type",            // 二维数组字段
-                disabled: "disabled",       // disabled 禁用字段
-                default: "<i data-event='edit' class='iconfont icon-edits'></i> <i data-event='remove' class='iconfont icon-remove'></i>"
+                // disabled: "disabled",       // disabled 禁用字段
+                default: ""
             }],
             event(e) {
                 // 成功回调封装

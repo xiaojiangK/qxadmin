@@ -1483,7 +1483,7 @@ textarea:focus{
 .qx-table td img{
     width: 50px;
 }
-.qx-table td.disabled{
+.qx-table td.disabled, .qx-table td>i.disabled{
     opacity: .6;
     pointer-events: none;
     -ms-pointer-events: none; 
