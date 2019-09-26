@@ -1457,6 +1457,9 @@ textarea:focus{
     font-size: 14px;
     color: #606266
 }
+.qx-table>div:last-child{
+    border-bottom: 1px solid #ebeef5
+}
 .qx-table thead {
     color: #666;
     background: rgba(255, 121, 5, .2);
@@ -1479,6 +1482,9 @@ textarea:focus{
     padding-left: 10px;
     padding-right: 10px;
 	border-bottom: 1px solid #ebeef5
+}
+.qx-table tr:last-child td{
+    border-bottom: none
 }
 .qx-table td img{
     width: 50px;
@@ -2321,6 +2327,7 @@ textarea:focus{
     bottom: 0;
     left: 220px;
     z-index: 99;
+    min-width: 1000px;
     padding: 0 0 100px;
     overflow: hidden;
     position: absolute;
