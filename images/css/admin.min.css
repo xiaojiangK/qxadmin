@@ -2487,3 +2487,54 @@ textarea:focus{
 .qx-copyright p:last-child{
     color: #999;
 }
+.probably{
+    padding: 20px;
+    background: #fff;
+    -webkit-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.2);
+}
+.probably>.list{
+    overflow: hidden;
+}
+.probably>.list .item{
+    width: 14.28%;
+    float: left;
+    text-align: center;
+    margin: 30px 0;
+}
+.probably>.list .picture{
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+.probably>.list .picture img{
+    width: 90%;
+}
+.probably>.list .desc{
+    margin: 25px 0 0;
+}
+.probably>.list .desc p{
+    color: #333;
+    font-size: 22px;
+}
+.probably>.list .desc span{
+    display: block;
+    color: #FF9003;
+    font-size: 30px;
+    margin: 0 0 15px;
+}
+.probably>.list .item:nth-of-type(3) .desc span{
+    color: #FE2E04;
+}
+.probably>.list .item:nth-of-type(4) .desc span{
+    color: #8802FE;
+}
+.probably>.list .item:nth-of-type(5) .desc span{
+    color:#FF6901;
+}
+.probably>.list .item:nth-of-type(6) .desc span{
+    color: #0267FD;
+}
+.probably>.list .item:nth-of-type(7) .desc span{
+    color: #1EDA05;
+}

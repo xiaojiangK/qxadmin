@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="740092856@qq.com">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="images/css/admin.min.css" />
+    <link rel="stylesheet" type="text/css" href="images/css/animate.min.css" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>admin-probably</title>
+</head>
+<body>
+    <div class="demo-main">
+        <div class="admim-title">
+            <h2>数据统计</h2>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>基础用法</h3>
+            </div>
+            <div class="content">
+                <div class="probably">
+                  <div class="list">
+                      <div class="item wow fadeInUp">
+                          <div class="picture">
+                              <img src="images/unite-icon.png" alt="">
+                          </div>
+                          <div class="desc">
+                              <span>12345678</span>
+                              <p>会员总数</p>
+                          </div>
+                      </div>
+                      <div class="item wow fadeInUp" data-wow-delay="0.1s">
+                          <div class="picture">
+                              <img src="images/unite-icon2.png" alt="">
+                          </div>
+                          <div class="desc">
+                              <span>12345</span>
+                              <p>日客单价</p>
+                          </div>
+                      </div>
+                      <div class="item circle wow fadeInUp" data-wow-delay="0.2s">
+                          <canvas id="circleA" width="120" height="120"></canvas>
+                          <div class="desc">
+                              <span>12345</span>
+                              <p>日活跃会员数</p>
+                          </div> 
+                      </div>
+                      <div class="item circle wow fadeInUp" data-wow-delay="0.3s">
+                          <canvas id="circleB" width="120" height="120"></canvas>
+                          <div class="desc">
+                              <span>12345</span>
+                              <p>消费会员总数</p>
+                          </div> 
+                      </div>
+                      <div class="item circle wow fadeInUp" data-wow-delay="0.4s">
+                          <canvas id="circleC" width="120" height="120"></canvas>
+                          <div class="desc">
+                              <span>12345</span>
+                              <p>日增消费会员数</p>
+                          </div> 
+                      </div>
+                      <div class="item circle wow fadeInUp" data-wow-delay="0.5s">
+                          <canvas id="circleD" width="120" height="120"></canvas>
+                          <div class="desc">
+                              <span>12345</span>
+                              <p>日活跃消费会员数</p>
+                          </div> 
+                      </div>
+                      <div class="item circle wow fadeInUp" data-wow-delay="0.6s">
+                          <canvas id="circleE" width="120" height="120"></canvas>
+                          <div class="desc">
+                              <span>12345</span>
+                              <p>日新增会员数</p>
+                          </div> 
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="images/js/jquery.min.js"></script>
+    <script src="images/js/admin.min.js"></script>
+    <script src="images/js/wow.min.js"></script>
+    <script>
+        // 初始化WOW
+        new WOW().init();
+
+        // new Progress
+        new t.Progress().renderOne('circleA',120,5,55.5,{start: '#F7781B', end: '#FE2C03', bg: '#FFD5CD'});
+        new t.Progress().renderOne('circleB',120,5,70.8,{start: '#EA32E8', end: '#8400FF', bg: '#F9D5FB'});
+        new t.Progress().renderOne('circleC',120,5,55.2,{start: '#FFCB15', end: '#FFCB15', bg: '#FFE1CC'});
+        new t.Progress().renderOne('circleD',120,5,70.6,{start: '#0CD5DC', end: '#0161FF', bg: '#D0F6FF'});
+        new t.Progress().renderOne('circleE',120,5,40.4,{start: '#D4F306', end: '#09D704', bg: '#CEF7CD'});
+    </script>
+</body>
+</html>
