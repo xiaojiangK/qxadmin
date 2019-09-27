@@ -21,7 +21,8 @@
                 <p>调用 Base类各种方法</p>
             </div>
             <div class="content">
-                <qx-button>AJAX 请求类</qx-button>
+                <qx-button>AJAX类</qx-button>
+                <qx-button>成功类</qx-button>
                 <qx-button>确认框类</qx-button>
                 <qx-button>提示类</qx-button>
                 <qx-button>渲染类</qx-button>
@@ -256,7 +257,25 @@
                 }
             });
         });
-        
+
+        // 成功类参数说明
+        // code: '',                // 请求状态
+        // msg: '',                 // 提示消息 
+        // parentRefresh: false     // 是否刷新父级（默认: false）
+        // closeLayer: false,       // 关闭layer弹窗（默认: false）
+        // link: '',                // 跳转链接
+        // refresh: false,          // 是否刷新（默认: false）
+        // remove: false,           // 是否删除tr（默认: false）
+        // type: 'success',         // 提示类型（默认: success）
+        // ele: obj                 // 当前元素
+        $('.qx-button').eq(1).on('click', function (){
+            base.success({
+                code: 100000,
+                msg: '这是一个成功操作类！',
+                type: 'success'
+            });
+        });
+
         // 确认框类参数说明
         // msg: '',                 // 确认框提示语
         // obj: '',                 // 父元素标签类或ID、标签。
@@ -266,7 +285,7 @@
         // refresh: false,          // 确认后是否刷新，默认false
         // showCancel: true         // 是否显示取消按钮
         // success: Function        // 点击确定成功回调函数
-        $('.qx-button').eq(1).on('click', function (){
+        $('.qx-button').eq(2).on('click', function (){
             base.comfirm({
                 // refresh: true,
                 msg: '你确定删除吗？',
@@ -282,10 +301,10 @@
         // type: 'success',        // 提示框类型，默认成功
         // obj: '',                // 父元素标签类或ID、标签。
         // html: '',               // 所在父元素中渲染的HTML。
-        $('.qx-button').eq(2).on('click', function (){
+        $('.qx-button').eq(3).on('click', function (){
             base.tips({
                 refresh: true,
-                msg: '我是一个提示类~'
+                msg: '这是一个提示类！'
             });
         });
 
@@ -294,9 +313,9 @@
         // type: 'success',        // 提示框类型，默认成功
         // obj: '',                // 父元素标签类或ID、标签。
         // html: '',               // 所在父元素中渲染的HTML。
-        $('.qx-button').eq(3).on('click', function (){
+        $('.qx-button').eq(4).on('click', function (){
             base.render({
-                msg: '渲染成功',
+                msg: '这是一个渲染类！',
                 obj: '.demo',
                 html: `
                     <div class="admim-title">

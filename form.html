@@ -52,6 +52,11 @@
                     <qx-form-item label="图标选择器">
                         <qx-select placeholder="请选择图标" name="icon" icon="spinner" icon-group></qx-select>
                     </qx-form-item>
+                    <qx-form-item label="书籍">
+                        <div class="cascader">
+                            <qx-cascader name="cascader" placeholder="请选择书籍"></qx-cascader>
+                        </div>
+                    </qx-form-item>
                     <qx-form-item label="复选框">
                         <qx-checkbox-group>
                             <qx-checkbox value="xiezuo" checked name="checkbox">写作</qx-checkbox>
@@ -117,19 +122,19 @@
                     </qx-form-item>
                     <qx-form-item label="书籍" prop="cascader">
                         <div class="cascader">
-                            <qx-cascader placeholder="请选择书籍"></qx-cascader>
+                            <qx-cascader name="cascader" placeholder="请选择书籍"></qx-cascader>
                         </div>
                     </qx-form-item>
                     <qx-form-item label="复选框" prop="checkbox">
                         <qx-checkbox-group>
-                            <qx-checkbox value="xiezuo" name="checkbox">写作</qx-checkbox>
+                            <qx-checkbox value="xiezuo" checked name="checkbox">写作</qx-checkbox>
                             <qx-checkbox value="yuedu" name="checkbox">阅读</qx-checkbox>
                             <qx-checkbox value="fadai" name="checkbox">发呆</qx-checkbox>
                             <qx-checkbox value="kanshu" name="checkbox">看书</qx-checkbox>
                         </qx-checkbox-group>
                     </qx-form-item>
                     <qx-form-item label="单选框" prop="radio">
-                        <qx-radio value="nan" name="radio">男</qx-radio>
+                        <qx-radio value="nan" checked name="radio">男</qx-radio>
                         <qx-radio value="nv" name="radio">女</qx-radio>
                     </qx-form-item>
                     <qx-form-item label="开关">
@@ -427,12 +432,14 @@
             }
         ];
 
-        $('.cascader').cascader({
-            options: options,
-            change: function (res) {
-                console.log(res);
-            }
-        });
+        $('.cascader').each(function() {
+            $(this).cascader({
+                options: options,
+                change: function (res) {
+                    console.log(res);
+                }
+            });
+        })
 
         // 常用匹配正则
         // /^1\d{10}$/                                                                              // 验证手机号码
