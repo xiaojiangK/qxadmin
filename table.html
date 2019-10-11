@@ -347,15 +347,16 @@
             overflowHeight: "560px",//出现滚动条的高度
             collapse: true,         //是否支持折叠，默认false，对应数据pid（父级ID，一级pid则为-1）
             defaultClose: true,    //是否默认折叠，默认false
+            checkBox: true,       //默认第一行是否存在checkbox，默认false，赋值true则折叠箭头显示第二行，否则第一行
             titles:[{
                 title: "id",
                 keyName: "id",
                 width: 80,
-                checkBox: true
+                checkBox: true  // 如折叠表格并且第一行存在checkbox则配置checkBox:true，箭头则显示第二行，否则第一行
             },
             {
                 title:"登录名",
-                keyName:"name",
+                keyName:"name"
             },{
                 title:"邮箱",
                 keyName:"email"

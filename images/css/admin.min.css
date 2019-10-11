@@ -1469,8 +1469,8 @@ textarea:focus{
 }
 .qx-table th,.qx-table td {
 	height: 30px;
-    padding: 12px 0;
     min-width: 0;
+    padding: 12px 10px;
     position: relative;
     text-align: center;
     box-sizing: border-box;
@@ -1482,8 +1482,6 @@ textarea:focus{
     white-space: normal;
     word-break: break-all;
     line-height: 23px;
-    padding-left: 10px;
-    padding-right: 10px;
 	border-bottom: 1px solid #ebeef5
 }
 .qx-table tr:last-child td{
@@ -2435,6 +2433,13 @@ textarea:focus{
     -ms-transform: rotate(-90deg);
     transform: rotate(-90deg);
     display: inline-block;
+}
+.qx-table.collapse .down{
+    position: absolute;
+    margin-top: -12px;
+    z-index: 9;
+    left: 5px;
+    top: 50%;
 }
 .qx-table.collapse .icon-icondown.active{
     -webkit-transform: rotate(0);
