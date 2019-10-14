@@ -132,6 +132,48 @@
                 </tr>
             </tbody>
         </table>
+        <h2>Table Data</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>参数</th>
+                    <th>说明</th>
+                    <th>类型</th>
+                    <th>可选值</th>
+                    <th>默认值</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>checked</td>
+                    <td>是否checkbox默认选中</td>
+                    <td>number | string</td>
+                    <td>—</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>disabled</td>
+                    <td>是否禁用操作，也支持默认传字符串HTML添加disabled类</td>
+                    <td>number | boolean</td>
+                    <td>—</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>pid</td>
+                    <td>父级ID，id=0则为一级，否则二级以上（仅折叠有效）</td>
+                    <td>number</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>cid</td>
+                    <td>分类ID，二级分类则有子级（三级）</td>
+                    <td>number</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+        </table>
         <h2>Table Event</h2>
         <table>
             <thead>
