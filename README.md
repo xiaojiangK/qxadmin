@@ -1,3 +1,3 @@
 # QxAdmin
-qxadmin UI库
+[qxadmin UI库](https://xiaojiangk.gitee.io/qxadmin/)
 Author：xiaojiangK
